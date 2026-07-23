@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margins and Miles | Business Spending Optimization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --navy: #0c1b2e;
+    --navy-deep: #081420;
+    --cream: #faf7f1;
+    --gold: #d6a44e;
+    --gold-dark: #b8863a;
+    --ink: #17233a;
+    --muted: #5c6a80;
+    --line: #e4ddce;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  img{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+  .wrap{max-width:600px; margin:0 auto;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn-gold{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    background:linear-gradient(180deg, #e0b562, var(--gold));
+    color:var(--navy-deep);
+    font-weight:700;
+    font-size:.95rem;
+    padding:1rem 1.75rem;
+    border-radius:3px;
+    border:none;
+    cursor:pointer;
+    letter-spacing:.01em;
+    box-shadow:0 6px 18px rgba(182,132,45,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-gold:hover{transform:translateY(-1px); box-shadow:0 10px 22px rgba(182,132,45,.45);}
+  .btn-gold.small{ padding:.6rem 1.1rem; font-size:.78rem; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    background:var(--navy);
+    padding:1.5rem 1.5rem 1.1rem;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    display:flex; align-items:center; gap:.6rem;
+    color:#fff;
+  }
+  .logo svg{ width:38px; height:38px; flex-shrink:0; }
+  .logo .name{
+    font-family:'Fraunces', serif; font-weight:600; font-size:.92rem; line-height:1.15;
+    letter-spacing:.02em; white-space:nowrap;
+  }
+  .logo .tag{
+    display:block; font-family:'Inter'; font-weight:400; font-size:.62rem; letter-spacing:.08em;
+    color:#9fb0c9; text-transform:uppercase; margin-top:.1rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse at 30% 0%, rgba(214,164,78,0.10), transparent 55%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;
+    padding:3rem 1.75rem 3.25rem;
+    text-align:left;
+  }
+  .hero h1{
+    font-size:2.15rem;
+    line-height:1.14;
+    color:#fff;
+    margin-bottom:1.1rem;
+  }
+  .hero p{
+    color:#c3cede;
+    font-size:1.02rem;
+    line-height:1.6;
+    max-width:34rem;
+    margin-bottom:1.6rem;
+  }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .section{ padding:3rem 1.75rem; }
+  .eyebrow-h2{
+    text-align:center; font-size:1.5rem; margin-bottom:2.1rem;
+  }
+  .steps{
+    display:flex; justify-content:space-between; gap:1rem; max-width:30rem; margin:0 auto;
+  }
+  .step{ flex:1; text-align:center; }
+  .step .num{
+    width:44px; height:44px; border-radius:50%;
+    background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+    margin:0 auto .85rem;
+  }
+  .step h3{ font-size:.98rem; margin-bottom:.35rem; font-weight:600; }
+  .step p{ font-size:.8rem; color:var(--muted); line-height:1.5; }
+
+  /* ---------- CTA STRIP ---------- */
+  .cta-strip{
+    background:var(--navy); color:#fff; text-align:center;
+    padding:2.4rem 1.75rem;
+  }
+  .cta-strip h2{ font-size:1.32rem; line-height:1.35; margin-bottom:1.4rem; color:#fff; font-weight:500;}
+  .cta-strip .note{
+    margin-top:.9rem; font-size:.78rem; color:#8ea0bc; letter-spacing:.02em;
+  }
+
+  /* ---------- TRAVEL YOU COULD BE EARNING ---------- */
+  .earn-row{
+    display:flex; justify-content:space-between; max-width:32rem; margin:0 auto 2rem;
+    gap:.5rem;
+  }
+  .earn-item{ text-align:center; flex:1; }
+  .earn-item .ico{
+    width:52px; height:52px; border-radius:50%;
+    border:1px solid var(--line); background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto .7rem; color:var(--navy); font-size:1.1rem;
+  }
+  .earn-item span{ font-size:.72rem; color:var(--muted); line-height:1.4; display:block; font-weight:500;}
+
+  /* ---------- STOP LEAVING REWARDS ---------- */
+  .split{
+    background:var(--cream);
+  }
+  .split-img{
+    width:100%; height:230px; object-fit:cover;
+  }
+  .split-copy{ padding:2.4rem 1.75rem 2.6rem; }
+  .split-copy h2{ font-size:1.5rem; line-height:1.25; margin-bottom:1rem; }
+  .split-copy p{ color:var(--muted); font-size:.92rem; line-height:1.65; margin-bottom:1.6rem; max-width:28rem;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-head{ text-align:center; font-size:1.4rem; padding:0 1.75rem; margin-bottom:1.8rem; }
+  .testi-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:.9rem;
+    padding:0 1.75rem 2.8rem;
+  }
+  .testi-card{
+    background:#fff; border:1px solid var(--line); border-radius:4px;
+    padding:1.15rem 1.05rem;
+  }
+  .stars{ color:var(--gold); font-size:.72rem; letter-spacing:.15em; margin-bottom:.65rem; }
+  .testi-card p{
+    font-size:.8rem; line-height:1.55; color:var(--ink); margin-bottom:.9rem; font-style:italic;
+  }
+  .testi-card .who{ font-size:.74rem; color:var(--muted); }
+  .testi-card .who b{ display:block; color:var(--ink); font-style:normal; font-weight:600; font-size:.78rem;}
+
+  /* ---------- FINAL CTA IMAGE ---------- */
+  .final-cta{
+    position:relative;
+    padding:3.4rem 1.75rem;
+    color:#fff;
+    text-align:left;
+    background:
+      linear-gradient(180deg, rgba(8,20,32,.55), rgba(8,20,32,.86)),
+      url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+  }
+  .final-cta h2{ font-size:1.7rem; line-height:1.28; margin-bottom:.9rem; color:#fff; }
+  .final-cta p{ color:#dbe3ee; font-size:.92rem; line-height:1.6; margin-bottom:1.5rem; max-width:26rem;}
+  .final-cta .note{ margin-top:.85rem; font-size:.78rem; color:#b9c6da;}
+
+  /* ---------- FOOTER STRIP ---------- */
+  .foot-strip{
+    background:var(--navy-deep);
+    display:flex; justify-content:space-between;
+    padding:1.6rem 1.75rem;
+    max-width:600px; margin:0 auto;
+  }
+  .foot-item{ text-align:center; flex:1; color:#c3cede; }
+  .foot-item i{ display:block; font-size:1.05rem; margin-bottom:.5rem; color:var(--gold); }
+  .foot-item span{ font-size:.66rem; letter-spacing:.02em; }
+
+  @media (max-width:400px){
+    .hero h1{ font-size:1.8rem; }
+    .testi-grid{ grid-template-columns:1fr; }
+    .steps{ flex-direction:column; gap:1.6rem; }
+    .earn-row{ flex-wrap:wrap; row-gap:1.4rem; }
+    .earn-item{ flex:0 0 45%; }
+    .foot-strip{ flex-wrap:wrap; gap:1.2rem; }
+    .foot-item{ flex:0 0 40%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Margins and Miles logo">
+        <rect x="0" y="0" width="100" height="100" rx="22" fill="#0c1b2e"/>
+        <rect x="16" y="61" width="11" height="17" rx="1.5" fill="#d6a44e" opacity="0.45"/>
+        <rect x="34" y="49" width="11" height="29" rx="1.5" fill="#d6a44e" opacity="0.7"/>
+        <rect x="52" y="34" width="11" height="44" rx="1.5" fill="#d6a44e"/>
+        <path d="M61 34 C68 26, 72 22, 76 19" stroke="#d6a44e" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.5 6" fill="none" opacity="0.85"/>
+        <g transform="translate(66,10) rotate(18) scale(1.15)">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="#d6a44e"/>
+        </g>
+      </svg>
+      <div>
+        <span class="name">MARGINS AND MILES</span>
+        <span class="tag">Business Spending Optimization</span>
+      </div>
+    </div>
+    <button class="btn-gold small">Book a Call</button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Your Business Spends.<br>You Should Travel.</h1>
+    <p>We help business owners turn everyday expenses into premium travel and unforgettable experiences.</p>
+    <button class="btn-gold">Book Your Free Strategy Call</button>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="padding-bottom:2rem;">
+    <h2 class="eyebrow-h2">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>We Analyze</h3>
+        <p>We review your cards, spending, and travel goals to find opportunities.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>We Strategize</h3>
+        <p>We build a custom plan to maximize points, perks, and value.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>You Travel More</h3>
+        <p>You earn more rewards and enjoy better travel — without spending more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <h2>The Travel You Could Be Earning</h2>
+    <div class="earn-row" style="margin-bottom:1.7rem;">
+      <div class="earn-item">
+        <div class="ico"><i class="fa-solid fa-plane-up"></i></div>
+        <span>Business Class Flights</span>
+      </div>
+      <div class="earn-item">
+        <div class="ico"><i class="fa-solid fa-hotel"></i></div>
+        <span>5-Star Hotel Stays</span>
+      </div>
+      <div class="earn-item">
+        <div class="ico"><i class="fa-solid fa-umbrella-beach"></i></div>
+        <span>Unforgettable Experiences</span>
+      </div>
+      <div class="earn-item">
+        <div class="ico"><i class="fa-solid fa-sack-dollar"></i></div>
+        <span>Thousands in Travel Value</span>
+      </div>
+    </div>
+    <button class="btn-gold">Book Your Free Strategy Call</button>
+    <div class="note">No obligation. Just value.</div>
+  </section>
+
+  <!-- STOP LEAVING REWARDS -->
+  <section class="split">
+    <img class="split-img" src="https://images.unsplash.com/photo-1540339832862-474599807836?q=80&w=1200&auto=format&fit=crop" alt="Business class airplane cabin">
+    <div class="split-copy">
+      <h2>Stop Leaving Rewards on the Table</h2>
+      <p>Most businesses are leaving thousands of dollars in travel rewards on the table every year. Let us build a strategy that changes that.</p>
+      <button class="btn-gold">Book Your Free Strategy Call</button>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" style="padding-top:0;">
+    <h2 class="testi-head">What Business Owners Are Saying</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Sam's strategy helped us earn over 250,000 points in 6 months. We flew our team to a conference in business class — on points!"</p>
+        <div class="who"><b>Alex B.</b>SaaS Company Founder</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"We took our family to Italy and didn't pay for a single flight. The plan paid for itself many times over."</p>
+        <div class="who"><b>Melissa R.</b>Online Store Owner</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I didn't have time to figure this out. Sam made it simple and profitable. We now travel better than ever."</p>
+        <div class="who"><b>Chris D.</b>Logistics Company Owner</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Our annual fees are lower, our perks are better, and our vacations are amazing. Highly recommend."</p>
+        <div class="who"><b>Stephanie L.</b>Real Estate Investor</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Sam knows this space inside and out. He's a true expert and a great partner for our business."</p>
+        <div class="who"><b>Ryan P.</b>Digital Marketing Agency Owner</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Best business decision we made last year. The travel value is unbelievable."</p>
+        <div class="who"><b>Daniel H.</b>Manufacturing Company Owner</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Let's Build Your Travel<br>Rewards Strategy</h2>
+    <p>Book your free 20-minute strategy call and see how much travel your business can unlock.</p>
+    <button class="btn-gold">Book Your Free Strategy Call</button>
+    <div class="note">No pressure. Just valuable insights.</div>
+  </section>
+
+  <!-- FOOTER STRIP -->
+  <div class="foot-strip">
+    <div class="foot-item"><i class="fa-regular fa-clock"></i><span>20-Minute Call</span></div>
+    <div class="foot-item"><i class="fa-solid fa-tag"></i><span>100% Free</span></div>
+    <div class="foot-item"><i class="fa-solid fa-shield-halved"></i><span>No Obligation</span></div>
+    <div class="foot-item"><i class="fa-regular fa-lightbulb"></i><span>Actionable Insights</span></div>
+  </div>
+
+</div>
+
+</body>
+</html>
