@@ -386,6 +386,66 @@
   .final-band .mini-stats span{ font-size:.82rem; color:#c3cede; display:flex; align-items:center; gap:.5rem; }
   .final-band .mini-stats i{ color:var(--gold); }
 
+  .step-label{
+    display:block; text-align:center; font-size:.72rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--gold-dark); margin-bottom:.4rem;
+  }
+  .pricing-card.featured .step-label{ color:var(--gold); }
+  .plan-divider{ width:36px; height:2px; background:var(--gold-dark); margin:1rem auto 1.4rem; }
+  .pricing-card.featured .plan-divider{ background:var(--gold); }
+  .plan-footnote{ text-align:center; font-size:.8rem; color:var(--muted); margin-top:.9rem; }
+  .pricing-card.featured .plan-footnote{ color:#9fb0c9; }
+
+  /* ---------- IS THIS RIGHT FOR YOU ---------- */
+  .fit-grid{
+    display:grid; grid-template-columns:1fr auto 1fr; gap:2rem; align-items:start;
+    max-width:1100px; margin:0 auto;
+  }
+  .fit-card{ border-radius:8px; padding:2.2rem 2rem; }
+  .fit-card.yes{ background:#eef6f0; border:1px solid #cfe8d6; }
+  .fit-card.no{ background:#fbeeee; border:1px solid #f0d3d3; }
+  .fit-card h3{
+    display:flex; align-items:center; gap:.7rem; font-size:1.1rem; margin-bottom:1.4rem; font-family:'Inter'; font-weight:700;
+  }
+  .fit-card.yes h3 i{ color:#2f9e58; }
+  .fit-card.no h3 i{ color:#d9534f; }
+  .fit-card ul{ list-style:none; }
+  .fit-card ul li{
+    font-size:.92rem; color:var(--ink); padding-left:1.6rem; position:relative; margin-bottom:.9rem; line-height:1.5;
+  }
+  .fit-card.yes ul li::before{
+    content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#2f9e58;
+    position:absolute; left:0; top:.15rem; font-size:.8rem;
+  }
+  .fit-card.no ul li::before{
+    content:"\f00d"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#d9534f;
+    position:absolute; left:0; top:.15rem; font-size:.8rem;
+  }
+  .fit-vs{
+    width:52px; height:52px; border-radius:50%; background:var(--gold); color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.82rem;
+    margin-top:2.6rem;
+  }
+
+  /* ---------- FAQ ACCORDION ---------- */
+  .faq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 3rem; max-width:1100px; margin:0 auto; }
+  .faq-acc{ border-bottom:1px solid var(--line); }
+  .faq-acc summary{
+    list-style:none; cursor:pointer; padding:1.15rem 0; font-size:.95rem; font-weight:600; color:var(--ink);
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  }
+  .faq-acc summary::-webkit-details-marker{ display:none; }
+  .faq-acc summary .icon{
+    flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1.5px solid var(--gold-dark);
+    color:var(--gold-dark); display:flex; align-items:center; justify-content:center; font-size:.72rem;
+  }
+  .faq-acc[open] summary .icon{ background:var(--gold-dark); color:#fff; }
+  .faq-acc p{ font-size:.88rem; color:var(--muted); line-height:1.6; padding:0 2rem 1.3rem 0; }
+  .see-more-link{
+    display:block; text-align:center; margin-top:1.5rem; color:var(--gold-dark); font-weight:600; font-size:.9rem;
+  }
+  .see-more-link i{ margin-left:.4rem; }
+
   .placeholder-note{
     max-width:1200px; margin:2.5rem auto 0; padding:1rem 1.4rem;
     background:#fbf2df; border:1px dashed var(--gold-dark); border-radius:6px;
@@ -423,6 +483,9 @@
     .svc-hero-top{ grid-template-columns:1fr; gap:2rem; }
     .svc-hero h1{ font-size:2.1rem; }
     .svc-hero-stats{ grid-template-columns:1fr; gap:1rem; }
+    .fit-grid{ grid-template-columns:1fr; }
+    .fit-vs{ display:none; }
+    .faq-grid{ grid-template-columns:1fr; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -470,18 +533,19 @@
     <div class="inner">
       <div class="svc-hero-top">
         <div>
-          <span class="eyebrow">Pricing</span>
-          <h1>A Smarter Investment for More Travel.</h1>
-          <p>Our strategies pay for themselves—many times over. Choose the level of support that fits your business today.</p>
+          <span class="eyebrow">Pricing &amp; Engagements</span>
+          <h1>One Strategy Can Pay for Itself Many Times Over.</h1>
+          <p>Your business is already spending money. The question is whether it's earning enough travel. We'll show you how to unlock the full value of every dollar.</p>
+          <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener"><i class="fa-regular fa-calendar"></i>&nbsp; Book Your Free Strategy Call</a>
         </div>
         <div class="svc-hero-img">
           <img src="https://images.unsplash.com/photo-1714756123393-929709970fdb?q=80&w=1200&auto=format&fit=crop" alt="Sunset view from an airplane window">
         </div>
       </div>
       <div class="svc-hero-stats">
-        <div class="stat"><i class="fa-solid fa-award"></i><div><div class="t1">Customized</div><div class="t2">for Your Business</div></div></div>
-        <div class="stat"><i class="fa-solid fa-shield-halved"></i><div><div class="t1">No Hidden Fees</div><div class="t2">Ever</div></div></div>
-        <div class="stat"><i class="fa-solid fa-headset"></i><div><div class="t1">Ongoing Support</div><div class="t2">When You Need It</div></div></div>
+        <div class="stat"><i class="fa-regular fa-clock"></i><div><div class="t1">20-Minute Call</div></div></div>
+        <div class="stat"><i class="fa-solid fa-percent"></i><div><div class="t1">100% Free</div></div></div>
+        <div class="stat"><i class="fa-solid fa-shield-halved"></i><div><div class="t1">No Obligation</div></div></div>
       </div>
     </div>
   </section>
@@ -489,111 +553,136 @@
   <!-- PRICING -->
   <section class="section">
     <div class="inner">
-      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Choose Your Plan</span>
-      <h2 class="eyebrow-h2">Flexible Options. Maximum Value.</h2>
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">How We Work Together</span>
+      <h2 class="eyebrow-h2">Choose the Level of Support That Fits Your Business</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="pricing-card-body">
-            <div class="plan-icon navy-circle"><i class="fa-solid fa-compass"></i></div>
+            <div class="plan-icon navy-circle"><i class="fa-regular fa-calendar"></i></div>
+            <span class="step-label">1. Complimentary</span>
             <h3>Strategy Call</h3>
-            <div class="plan-sub">One-Time Strategy Session</div>
-            <div class="desc">Perfect if you want expert guidance and a custom roadmap to start earning more rewards.</div>
+            <div class="plan-divider"></div>
+            <div class="desc">A 20-minute discovery call to understand your business, spending, and travel goals.</div>
             <ul>
-              <li>60-Minute Strategy Call</li>
-              <li>Spending &amp; Card Analysis</li>
-              <li>Custom Card Recommendations</li>
-              <li>Personalized Rewards Roadmap</li>
-              <li>Redemption Strategy Overview</li>
-              <li>Call Summary &amp; Next Steps</li>
+              <li>Review your spending &amp; current cards</li>
+              <li>Identify potential opportunities</li>
+              <li>Answer your top questions</li>
+              <li>Determine next best steps</li>
             </ul>
-            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Free Strategy Call</a>
+            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Call</a>
+            <div class="plan-footnote">No obligation. Just valuable insights.</div>
           </div>
         </div>
         <div class="pricing-card featured">
           <div class="plan-ribbon">Most Popular</div>
           <div class="pricing-card-body">
-            <div class="plan-icon gold-circle"><i class="fa-solid fa-crown"></i></div>
-            <h3>Strategy &amp; Support</h3>
-            <div class="plan-sub">Ongoing Advisory</div>
-            <div class="desc">Our most popular option for business owners who want ongoing guidance and strategy updates.</div>
+            <div class="plan-icon gold-circle"><i class="fa-solid fa-book-open"></i></div>
+            <span class="step-label">2. Custom</span>
+            <h3>Rewards Strategy</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">A one-time engagement where we build your personalized rewards roadmap.</div>
             <ul>
-              <li>Everything in Strategy Call</li>
-              <li>Quarterly Strategy Reviews</li>
-              <li>New Card &amp; Bonus Alerts</li>
-              <li>Spending Optimization Updates</li>
-              <li>Priority Email Support</li>
-              <li>Redemption Guidance</li>
-              <li>Annual Strategy Report</li>
+              <li>Custom card recommendations</li>
+              <li>Spending optimization plan</li>
+              <li>Application timing strategy</li>
+              <li>Redemption strategy &amp; guidance</li>
+              <li>Written action plan &amp; next steps</li>
+              <li>30-day email support</li>
             </ul>
-            <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Get Started</a>
+            <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
+            <div class="plan-footnote">One strategy. Years of premium travel.</div>
           </div>
         </div>
         <div class="pricing-card">
           <div class="pricing-card-body">
-            <div class="plan-icon navy-circle"><i class="fa-solid fa-gem"></i></div>
-            <h3>Premium Partnership</h3>
-            <div class="plan-sub">Full-Service Advisory</div>
-            <div class="desc">White-glove service for businesses that want comprehensive, hands-on support every step of the way.</div>
+            <div class="plan-icon navy-circle"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <span class="step-label">3. Ongoing</span>
+            <h3>Advisory Membership</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">Continuous optimization as your business, spending, and opportunities evolve.</div>
             <ul>
-              <li>Everything in Strategy &amp; Support</li>
-              <li>Monthly Strategy Check-Ins</li>
-              <li>Application &amp; Timing Guidance</li>
-              <li>Complex Travel Planning Support</li>
-              <li>Team Education (If Needed)</li>
-              <li>Redemption Booking Guidance</li>
-              <li>Dedicated Advisor</li>
+              <li>Quarterly strategy reviews</li>
+              <li>New card &amp; bonus alerts</li>
+              <li>Annual fee &amp; benefits reviews</li>
+              <li>Spending &amp; goal adjustments</li>
+              <li>Redemption guidance</li>
+              <li>Ongoing expert support</li>
             </ul>
-            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Get Started</a>
+            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
+            <div class="plan-footnote">Stay ahead. Earn more. Travel better.</div>
           </div>
         </div>
-      </div>
-      <div class="commitment-line"><i class="fa-solid fa-shield-halved"></i> All plans are backed by our commitment to your success.</div>
-      <div class="placeholder-note">
-        Placeholder pricing — this mockup didn't specify dollar amounts, so none are shown. Add your real prices to each plan before publishing.
       </div>
     </div>
   </section>
 
-  <!-- EVERY PLAN INCLUDES -->
-  <section class="section includes-band">
+  <!-- WHY CLIENTS INVEST -->
+  <section class="why-band">
     <div class="inner">
-      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Every Plan Includes</span>
-      <div class="includes-grid" style="margin-top:2.5rem;">
-        <div class="includes-item">
-          <div class="ico"><i class="fa-solid fa-bullseye"></i></div>
-          <h3>Custom Strategy</h3>
-          <p>Built around your business, spending, and goals.</p>
+      <span class="eyebrow" style="text-align:center; display:block;">Why Clients Invest</span>
+      <h2 class="eyebrow-h2" style="color:#fff;">More Than Points. A Better Way to Travel.</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="ico"><i class="fa-solid fa-earth-americas"></i></div>
+          <h3>Unlock More Value</h3>
+          <p>One strategy can unlock thousands of dollars in travel value.</p>
         </div>
-        <div class="includes-item">
+        <div class="why-item">
           <div class="ico"><i class="fa-solid fa-credit-card"></i></div>
-          <h3>Maximize Rewards</h3>
-          <p>We help you earn the most from every dollar.</p>
+          <h3>Avoid Costly Mistakes</h3>
+          <p>We help you avoid unnecessary fees, missed bonuses, and costly decisions.</p>
         </div>
-        <div class="includes-item">
-          <div class="ico"><i class="fa-solid fa-right-left"></i></div>
-          <h3>Better Redemptions</h3>
-          <p>Get more value from your points and miles.</p>
+        <div class="why-item">
+          <div class="ico"><i class="fa-regular fa-clock"></i></div>
+          <h3>Save Time &amp; Research</h3>
+          <p>We do the research so you can focus on running and growing your business.</p>
         </div>
-        <div class="includes-item">
-          <div class="ico"><i class="fa-solid fa-lock"></i></div>
-          <h3>No Obligation</h3>
-          <p>You're free to implement at your own pace.</p>
+        <div class="why-item">
+          <div class="ico"><i class="fa-solid fa-suitcase-rolling"></i></div>
+          <h3>Travel Your Way</h3>
+          <p>Earn the flights, hotels, and experiences you actually want—not just points.</p>
         </div>
-        <div class="includes-item">
-          <div class="ico"><i class="fa-solid fa-people-group"></i></div>
-          <h3>Business Focused</h3>
-          <p>We specialize in entrepreneurs and business owners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IS THIS RIGHT FOR YOU -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Is This Right for You?</span>
+      <div class="fit-grid" style="margin-top:2.5rem;">
+        <div class="fit-card yes">
+          <h3><i class="fa-solid fa-circle-check"></i> You're a Great Fit If...</h3>
+          <ul>
+            <li>You're a business owner or entrepreneur</li>
+            <li>You spend $3,000+ per month in your business</li>
+            <li>You want to travel more (and better)</li>
+            <li>You're tired of leaving rewards on the table</li>
+            <li>You want a clear, simple strategy that works</li>
+          </ul>
+        </div>
+        <div class="fit-vs">VS</div>
+        <div class="fit-card no">
+          <h3><i class="fa-solid fa-circle-xmark"></i> We May Not Be the Right Fit If...</h3>
+          <ul>
+            <li>You're not open to using credit cards strategically</li>
+            <li>You're looking for do-it-yourself tips and tricks</li>
+            <li>You don't have consistent business spending</li>
+            <li>You're not interested in maximizing travel value</li>
+            <li>You're looking for free, generic advice</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
+
   <section class="final-band">
     <div class="inner">
-      <span class="eyebrow">Every Plan Invests in More Travel</span>
-      <h2>Let's Build a Strategy That Pays for Itself.</h2>
-      <p>The right strategy today can unlock thousands of dollars in travel value for your business.</p>
+      <span class="eyebrow">Ready to See What's Possible?</span>
+      <h2>Your Next Trip Starts With a Better Strategy.</h2>
+      <p>Let's build a plan that turns your business spending into unforgettable experiences.</p>
       <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
       <div class="mini-stats">
         <span><i class="fa-regular fa-clock"></i>20-Minute Call</span>
