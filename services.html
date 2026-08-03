@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Margins and Miles</title>
-<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
-<link rel="icon" href="favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=2">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png?v=2">
+<title>Services &amp; Pricing | Margins and Miles</title>
+<link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
+<link rel="icon" href="favicon.ico?v=3" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=3">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   :root{
-    --navy: #0c1b2e;
-    --navy-deep: #081420;
-    --cream: #faf7f1;
-    --gold: #d6a44e;
-    --gold-dark: #b8863a;
-    --ink: #17233a;
-    --muted: #5c6a80;
-    --line: #e4ddce;
+    --navy: #07602a;
+    --navy-deep: #053e1b;
+    --cream: #eef0ee;
+    --gold: #0fb650;
+    --gold-dark: #0c9240;
+    --ink: #07602a;
+    --muted: #4f6b58;
+    --line: #dfe3df;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -44,7 +44,7 @@
   /* ---------- BUTTONS ---------- */
   .btn-gold{
     display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-    background:linear-gradient(180deg, #e0b562, var(--gold));
+    background:linear-gradient(180deg, #2ecc66, var(--gold));
     color:var(--navy-deep);
     font-weight:700;
     font-size:1rem;
@@ -53,18 +53,18 @@
     border:none;
     cursor:pointer;
     letter-spacing:.01em;
-    box-shadow:0 8px 22px rgba(182,132,45,.35);
+    box-shadow:0 8px 22px rgba(12,146,64,.35);
     transition:transform .15s ease, box-shadow .15s ease;
     white-space:nowrap;
   }
-  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(182,132,45,.45);}
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(12,146,64,.45);}
   .btn-gold.small{ padding:.7rem 1.4rem; font-size:.85rem; }
 
   .nav-links{ display:flex; align-items:center; gap:1rem; }
   .btn-outline{
     display:inline-flex; align-items:center; justify-content:center;
     padding:.68rem 1.3rem; font-size:.85rem; font-weight:600;
-    border:1.5px solid rgba(214,164,78,.55); color:#fff; border-radius:3px;
+    border:1.5px solid rgba(15,182,80,.55); color:#fff; border-radius:3px;
     background:transparent; white-space:nowrap;
     transition:background .15s ease, border-color .15s ease, color .15s ease;
   }
@@ -96,7 +96,7 @@
   /* ---------- HERO ---------- */
   .hero{
     background:
-      radial-gradient(ellipse at 20% 10%, rgba(214,164,78,0.12), transparent 55%),
+      radial-gradient(ellipse at 20% 10%, rgba(15,182,80,0.12), transparent 55%),
       linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
     color:#fff;
   }
@@ -130,7 +130,7 @@
   .hero-visual::after{
     content:"";
     position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(12,27,46,0) 40%, rgba(12,27,46,.55) 100%);
+    background:linear-gradient(180deg, rgba(7,96,42,0) 40%, rgba(7,96,42,.55) 100%);
   }
   .hero-stat{
     position:absolute; left:1.5rem; bottom:1.5rem; z-index:2;
@@ -199,7 +199,7 @@
   }
   .split-img{
     width:100%; height:420px; object-fit:cover; border-radius:6px;
-    box-shadow:0 24px 48px rgba(23,35,58,.14);
+    box-shadow:0 24px 48px rgba(7,96,42,.14);
   }
   .split-copy h2{ font-size:2.1rem; line-height:1.22; margin-bottom:1.3rem; }
   .split-copy p{ color:var(--muted); font-size:1.05rem; line-height:1.7; margin-bottom:1.9rem; max-width:30rem;}
@@ -226,7 +226,7 @@
     color:#fff;
     text-align:left;
     background:
-      linear-gradient(105deg, rgba(8,20,32,.9) 30%, rgba(8,20,32,.45) 100%),
+      linear-gradient(105deg, rgba(5,62,27,.9) 30%, rgba(5,62,27,.45) 100%),
       url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
   }
   .final-cta .inner{ padding:6rem 3.5rem; max-width:1200px; }
@@ -234,23 +234,21 @@
   .final-cta p{ color:#dbe3ee; font-size:1.1rem; line-height:1.65; margin-bottom:2rem; max-width:30rem;}
   .final-cta .note{ margin-top:1rem; font-size:.85rem; color:#b9c6da;}
 
-  /* ---------- FOOTER STRIP ---------- */
-  .foot-strip{
-    background:var(--navy-deep);
+  /* ---------- LEGAL BAR ---------- */
+  .legal-bar{ background:var(--navy-deep); border-top:1px solid rgba(255,255,255,.08); }
+  .legal-bar .inner{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.3rem 3.5rem; flex-wrap:wrap; gap:.8rem;
   }
-  .foot-strip .inner{
-    display:grid; grid-template-columns:repeat(4, 1fr);
-    padding:2.4rem 3.5rem;
-    gap:1rem;
-  }
-  .foot-item{ text-align:center; color:#c3cede; }
-  .foot-item i{ display:block; font-size:1.3rem; margin-bottom:.6rem; color:var(--gold); }
-  .foot-item span{ font-size:.78rem; letter-spacing:.02em; }
+  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; }
+  .legal-bar .legal-links{ display:flex; gap:1.6rem; }
+  .legal-bar .legal-links a{ font-size:.74rem; color:#7d8fac; transition:color .15s ease; }
+  .legal-bar .legal-links a:hover{ color:#fff; }
 
   /* ---------- SERVICES HERO (split) ---------- */
   .svc-hero{
     background:
-      radial-gradient(ellipse at 20% 10%, rgba(214,164,78,0.12), transparent 55%),
+      radial-gradient(ellipse at 20% 10%, rgba(15,182,80,0.12), transparent 55%),
       linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
     color:#fff;
   }
@@ -300,7 +298,7 @@
   .why-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:2.5rem; max-width:1100px; margin:0 auto; }
   .why-item{ text-align:center; }
   .why-item .ico{
-    width:60px; height:60px; border-radius:50%; border:1.5px solid rgba(214,164,78,.5);
+    width:60px; height:60px; border-radius:50%; border:1.5px solid rgba(15,182,80,.5);
     display:flex; align-items:center; justify-content:center; margin:0 auto 1.1rem; color:var(--gold); font-size:1.3rem;
   }
   .why-item h3{ font-size:1.05rem; color:#fff; margin-bottom:.6rem; font-weight:600; }
@@ -325,7 +323,7 @@
   .final-band{
     position:relative; color:#fff; text-align:left;
     background:
-      linear-gradient(105deg, rgba(8,20,32,.88) 35%, rgba(8,20,32,.35) 100%),
+      linear-gradient(105deg, rgba(5,62,27,.88) 35%, rgba(5,62,27,.35) 100%),
       url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
   }
   .final-band .inner{ padding:5.5rem 3.5rem; max-width:1200px; }
@@ -339,7 +337,7 @@
   /* ---------- SUBPAGE HERO (Services / Pricing) ---------- */
   .page-hero{
     background:
-      radial-gradient(ellipse at 20% 10%, rgba(214,164,78,0.12), transparent 55%),
+      radial-gradient(ellipse at 20% 10%, rgba(15,182,80,0.12), transparent 55%),
       linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
     color:#fff; text-align:center;
   }
@@ -377,39 +375,127 @@
   }
   .pricing-card{
     background:#fff; border:1px solid var(--line); border-radius:8px;
-    padding:2.6rem 2rem; display:flex; flex-direction:column;
-    position:relative;
+    display:flex; flex-direction:column; position:relative; overflow:hidden;
   }
   .pricing-card.featured{
-    border:2px solid var(--gold); box-shadow:0 20px 40px rgba(23,35,58,.12);
+    background:var(--navy); border:none; box-shadow:0 24px 50px rgba(5,62,27,.28);
   }
-  .featured-badge{
-    position:absolute; top:-.9rem; left:50%; transform:translateX(-50%);
-    background:var(--gold); color:var(--navy-deep); font-size:.7rem; font-weight:700;
-    letter-spacing:.05em; text-transform:uppercase; padding:.4rem 1rem; border-radius:20px;
+  .plan-ribbon{
+    background:var(--gold); color:var(--navy-deep); text-align:center;
+    font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    padding:.65rem 0;
   }
-  .pricing-card h3{ font-size:1.3rem; margin-bottom:.5rem; }
-  .pricing-card .price{
-    font-family:'Fraunces', serif; font-size:2.3rem; font-weight:700; color:var(--navy);
-    margin-bottom:.3rem;
+  .pricing-card-body{ padding:2.6rem 2rem; display:flex; flex-direction:column; flex-grow:1; }
+  .plan-icon{
+    width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    margin:0 auto 1.2rem; font-size:1.4rem;
   }
-  .pricing-card .price span{ font-size:.95rem; font-family:'Inter'; font-weight:500; color:var(--muted); }
-  .pricing-card .desc{ font-size:.88rem; color:var(--muted); margin-bottom:1.6rem; line-height:1.55; min-height:2.6rem; }
+  .plan-icon.navy-circle{ background:var(--navy); color:#fff; }
+  .plan-icon.gold-circle{ background:var(--gold); color:var(--navy-deep); }
+  .pricing-card h3{ font-size:1.3rem; text-align:center; margin-bottom:.4rem; }
+  .pricing-card.featured h3{ color:#fff; }
+  .plan-sub{
+    text-align:center; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--gold-dark); margin-bottom:1.4rem; padding-bottom:1.3rem; border-bottom:1px solid var(--line);
+  }
+  .pricing-card.featured .plan-sub{ color:var(--gold); border-bottom-color:rgba(255,255,255,.12); }
+  .pricing-card .desc{ font-size:.88rem; color:var(--muted); margin-bottom:1.6rem; line-height:1.6; text-align:center; }
+  .pricing-card.featured .desc{ color:#c3cede; }
   .pricing-card ul{ list-style:none; flex-grow:1; margin-bottom:1.8rem; }
   .pricing-card ul li{
-    font-size:.9rem; color:var(--ink); padding-left:1.4rem; position:relative; margin-bottom:.75rem; line-height:1.5;
+    font-size:.88rem; color:var(--ink); padding-left:1.5rem; position:relative; margin-bottom:.75rem; line-height:1.5;
   }
   .pricing-card ul li::before{
     content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:var(--gold-dark);
+    position:absolute; left:0; top:.1rem; font-size:.78rem;
+  }
+  .pricing-card.featured ul li{ color:#e5ebf3; }
+  .pricing-card.featured ul li::before{ color:var(--gold); }
+  .btn-navy{
+    display:inline-flex; align-items:center; justify-content:center; width:100%;
+    padding:1rem; background:var(--navy); color:#fff; font-weight:700; font-size:.92rem;
+    border-radius:3px; transition:background .15s ease;
+  }
+  .btn-navy:hover{ background:var(--navy-deep); }
+  .pricing-card .btn-gold{ width:100%; }
+  .commitment-line{
+    text-align:center; font-size:.9rem; color:var(--muted); margin-top:2.2rem;
+    display:flex; align-items:center; justify-content:center; gap:.6rem;
+  }
+  .commitment-line i{ color:var(--gold-dark); }
+
+  /* ---------- EVERY PLAN INCLUDES ---------- */
+  .includes-band{ background:#e9efe9; }
+  .includes-grid{
+    display:grid; grid-template-columns:repeat(5, 1fr); gap:2rem; max-width:1150px; margin:0 auto;
+  }
+  .includes-item{ text-align:center; }
+  .includes-item .ico{
+    width:58px; height:58px; border-radius:50%; border:1px solid var(--line); background:#fff;
+    display:flex; align-items:center; justify-content:center; margin:0 auto .9rem; color:var(--navy); font-size:1.2rem;
+  }
+  .includes-item h3{ font-size:.95rem; margin-bottom:.4rem; font-weight:600; }
+  .includes-item p{ font-size:.8rem; color:var(--muted); line-height:1.55; }
+
+  /* ---------- FINAL CTA (image band) ---------- */
+  .final-band{
+    position:relative; color:#fff; text-align:left;
+    background:
+      linear-gradient(105deg, rgba(5,62,27,.88) 35%, rgba(5,62,27,.35) 100%),
+      url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  }
+  .final-band .inner{ padding:5.5rem 3.5rem; max-width:1200px; }
+  .final-band .eyebrow{ display:block; color:var(--gold); font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem; }
+  .final-band h2{ font-size:2.4rem; line-height:1.2; margin-bottom:1.1rem; color:#fff; max-width:32rem; }
+  .final-band p{ color:#dbe3ee; font-size:1.05rem; line-height:1.6; margin-bottom:1.8rem; max-width:28rem; }
+  .final-band .mini-stats{ display:flex; gap:1.8rem; margin-top:1.5rem; flex-wrap:wrap; }
+  .final-band .mini-stats span{ font-size:.82rem; color:#c3cede; display:flex; align-items:center; gap:.5rem; }
+  .final-band .mini-stats i{ color:var(--gold); }
+
+  .step-label{
+    display:block; text-align:center; font-size:.72rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--gold-dark); margin-bottom:.4rem;
+  }
+  .pricing-card.featured .step-label{ color:var(--gold); }
+  .plan-divider{ width:36px; height:2px; background:var(--gold-dark); margin:1rem auto 1.4rem; }
+  .pricing-card.featured .plan-divider{ background:var(--gold); }
+  .plan-footnote{ text-align:center; font-size:.8rem; color:var(--muted); margin-top:.9rem; }
+  .pricing-card.featured .plan-footnote{ color:#9fb0c9; }
+
+  /* ---------- IS THIS RIGHT FOR YOU ---------- */
+  .fit-grid{
+    display:grid; grid-template-columns:1fr auto 1fr; gap:2rem; align-items:start;
+    max-width:1100px; margin:0 auto;
+  }
+  .fit-card{ border-radius:8px; padding:2.2rem 2rem; }
+  .fit-card.yes{ background:#eef6f0; border:1px solid #cfe8d6; }
+  .fit-card.no{ background:#fbeeee; border:1px solid #f0d3d3; }
+  .fit-card h3{
+    display:flex; align-items:center; gap:.7rem; font-size:1.1rem; margin-bottom:1.4rem; font-family:'Inter'; font-weight:700;
+  }
+  .fit-card.yes h3 i{ color:#2f9e58; }
+  .fit-card.no h3 i{ color:#d9534f; }
+  .fit-card ul{ list-style:none; }
+  .fit-card ul li{
+    font-size:.92rem; color:var(--ink); padding-left:1.6rem; position:relative; margin-bottom:.9rem; line-height:1.5;
+  }
+  .fit-card.yes ul li::before{
+    content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#2f9e58;
     position:absolute; left:0; top:.15rem; font-size:.8rem;
   }
-  .pricing-card .btn-gold, .pricing-card .btn-outline{ width:100%; }
-  .pricing-card .btn-outline{ border-color:var(--navy); color:var(--navy); }
-  .pricing-card .btn-outline:hover{ background:var(--navy); color:#fff; }
+  .fit-card.no ul li::before{
+    content:"\f00d"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#d9534f;
+    position:absolute; left:0; top:.15rem; font-size:.8rem;
+  }
+  .fit-vs{
+    width:52px; height:52px; border-radius:50%; background:var(--gold); color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.82rem;
+    margin-top:2.6rem;
+  }
 
   .placeholder-note{
     max-width:1200px; margin:2.5rem auto 0; padding:1rem 1.4rem;
-    background:#fbf2df; border:1px dashed var(--gold-dark); border-radius:6px;
+    background:#eaf7ee; border:1px dashed var(--gold-dark); border-radius:6px;
     font-size:.85rem; color:var(--gold-dark); text-align:center;
   }
 
@@ -432,9 +518,11 @@
     .earn-row{ grid-template-columns:repeat(2, 1fr); row-gap:2.2rem; }
     .final-cta .inner{ padding:4rem 2rem; }
     .final-cta h2{ font-size:2.1rem; }
-    .foot-strip .inner{ grid-template-columns:repeat(2, 1fr); padding:2rem; row-gap:1.8rem; }
+    .legal-bar .inner{ flex-direction:column; text-align:center; padding:1.3rem 2rem; }
     .service-grid{ grid-template-columns:1fr; }
     .pricing-grid{ grid-template-columns:1fr; }
+    .fit-grid{ grid-template-columns:1fr; }
+    .fit-vs{ display:none; }
     .page-hero .inner{ padding:3.5rem 2rem; }
     .page-hero h1{ font-size:2.2rem; }
     .svc-hero .inner{ padding:3.5rem 2rem 0; }
@@ -468,13 +556,13 @@
     <div class="inner">
       <a class="logo" href="index.html">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Margins and Miles logo">
-          <rect x="0" y="0" width="100" height="100" rx="22" fill="#0c1b2e"/>
-          <rect x="16" y="61" width="11" height="17" rx="1.5" fill="#d6a44e" opacity="0.45"/>
-          <rect x="34" y="49" width="11" height="29" rx="1.5" fill="#d6a44e" opacity="0.7"/>
-          <rect x="52" y="34" width="11" height="44" rx="1.5" fill="#d6a44e"/>
-          <path d="M63 33 L73 21" stroke="#d6a44e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+          <rect x="0" y="0" width="100" height="100" rx="22" fill="#07602a"/>
+          <rect x="16" y="61" width="11" height="17" rx="1.5" fill="#0fb650" opacity="0.45"/>
+          <rect x="34" y="49" width="11" height="29" rx="1.5" fill="#0fb650" opacity="0.7"/>
+          <rect x="52" y="34" width="11" height="44" rx="1.5" fill="#0fb650"/>
+          <path d="M63 33 L73 21" stroke="#0fb650" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
           <g transform="translate(62,2) rotate(20) scale(1.3)">
-            <path d="M2 21 L23 12 L2 3 L2 10 L17 12 L2 14 Z" fill="#d6a44e"/>
+            <path d="M2 21 L23 12 L2 3 L2 10 L17 12 L2 14 Z" fill="#0fb650"/>
           </g>
         </svg>
         <div>
@@ -484,7 +572,6 @@
       </a>
       <div class="nav-links">
         <a class="btn-outline active" href="services.html">Services</a>
-        <a class="btn-outline" href="pricing.html">Pricing</a>
         <a class="btn-outline" href="testimonials.html">Testimonials</a>
         <a class="btn-gold small" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Call</a>
       </div>
@@ -616,6 +703,103 @@
     </div>
   </section>
 
+
+  <!-- PRICING -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">How We Work Together</span>
+      <h2 class="eyebrow-h2">Choose the Level of Support That Fits Your Business</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card-body">
+            <div class="plan-icon navy-circle"><i class="fa-regular fa-calendar"></i></div>
+            <span class="step-label">1. Complimentary</span>
+            <h3>Strategy Call</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">A 20-minute discovery call to understand your business, spending, and travel goals.</div>
+            <ul>
+              <li>Review your spending &amp; current cards</li>
+              <li>Identify potential opportunities</li>
+              <li>Answer your top questions</li>
+              <li>Determine next best steps</li>
+            </ul>
+            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Call</a>
+            <div class="plan-footnote">No obligation. Just valuable insights.</div>
+          </div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="plan-ribbon">Most Popular</div>
+          <div class="pricing-card-body">
+            <div class="plan-icon gold-circle"><i class="fa-solid fa-book-open"></i></div>
+            <span class="step-label">2. Custom</span>
+            <h3>Rewards Strategy</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">A one-time engagement where we build your personalized rewards roadmap.</div>
+            <ul>
+              <li>Custom card recommendations</li>
+              <li>Spending optimization plan</li>
+              <li>Application timing strategy</li>
+              <li>Redemption strategy &amp; guidance</li>
+              <li>Written action plan &amp; next steps</li>
+              <li>30-day email support</li>
+            </ul>
+            <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
+            <div class="plan-footnote">One strategy. Years of premium travel.</div>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-body">
+            <div class="plan-icon navy-circle"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <span class="step-label">3. Ongoing</span>
+            <h3>Advisory Membership</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">Continuous optimization as your business, spending, and opportunities evolve.</div>
+            <ul>
+              <li>Quarterly strategy reviews</li>
+              <li>New card &amp; bonus alerts</li>
+              <li>Annual fee &amp; benefits reviews</li>
+              <li>Spending &amp; goal adjustments</li>
+              <li>Redemption guidance</li>
+              <li>Ongoing expert support</li>
+            </ul>
+            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
+            <div class="plan-footnote">Stay ahead. Earn more. Travel better.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IS THIS RIGHT FOR YOU -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Is This Right for You?</span>
+      <div class="fit-grid" style="margin-top:2.5rem;">
+        <div class="fit-card yes">
+          <h3><i class="fa-solid fa-circle-check"></i> You're a Great Fit If...</h3>
+          <ul>
+            <li>You're a business owner or entrepreneur</li>
+            <li>You spend $3,000+ per month in your business</li>
+            <li>You want to travel more (and better)</li>
+            <li>You're tired of leaving rewards on the table</li>
+            <li>You want a clear, simple strategy that works</li>
+          </ul>
+        </div>
+        <div class="fit-vs">VS</div>
+        <div class="fit-card no">
+          <h3><i class="fa-solid fa-circle-xmark"></i> We May Not Be the Right Fit If...</h3>
+          <ul>
+            <li>You're not open to using credit cards strategically</li>
+            <li>You're looking for do-it-yourself tips and tricks</li>
+            <li>You don't have consistent business spending</li>
+            <li>You're not interested in maximizing travel value</li>
+            <li>You're looking for free, generic advice</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WHY CLIENTS WORK WITH US -->
   <section class="why-band">
     <div class="inner">
@@ -695,12 +879,13 @@
     </div>
   </section>
 
-  <div class="foot-strip">
+  <div class="legal-bar">
     <div class="inner">
-      <div class="foot-item"><i class="fa-regular fa-clock"></i><span>20-Minute Call</span></div>
-      <div class="foot-item"><i class="fa-solid fa-tag"></i><span>100% Free</span></div>
-      <div class="foot-item"><i class="fa-solid fa-shield-halved"></i><span>No Obligation</span></div>
-      <div class="foot-item"><i class="fa-regular fa-lightbulb"></i><span>Actionable Insights</span></div>
+      <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
     </div>
   </div>
 
