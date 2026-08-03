@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials | Margins and Miles</title>
+<title>Margins and Miles | Business Spending Optimization</title>
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -247,32 +247,6 @@
   .foot-item i{ display:block; font-size:1.3rem; margin-bottom:.6rem; color:var(--gold); }
   .foot-item span{ font-size:.78rem; letter-spacing:.02em; }
 
-  /* ---------- SPLIT HERO (image + stat row) ---------- */
-  .svc-hero{
-    background:
-      radial-gradient(ellipse at 20% 10%, rgba(214,164,78,0.12), transparent 55%),
-      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color:#fff;
-  }
-  .svc-hero .inner{ padding:4rem 3.5rem 0; }
-  .svc-hero-top{ display:grid; grid-template-columns:1.1fr .9fr; gap:3.5rem; align-items:center; }
-  .eyebrow{
-    display:block; color:var(--gold); font-size:.78rem; font-weight:700; letter-spacing:.12em;
-    text-transform:uppercase; margin-bottom:1rem;
-  }
-  .svc-hero h1{ font-size:2.7rem; line-height:1.18; color:#fff; margin-bottom:1.2rem; }
-  .svc-hero p{ color:#c3cede; font-size:1.05rem; line-height:1.65; max-width:30rem; margin-bottom:1.8rem; }
-  .svc-hero-img{ border-radius:6px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.35); }
-  .svc-hero-img img{ width:100%; height:360px; object-fit:cover; }
-  .svc-hero-stats{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; max-width:900px;
-    margin:2.6rem auto 0; padding:2rem 0 2.4rem; border-top:1px solid rgba(255,255,255,.12);
-  }
-  .svc-hero-stats .stat{ display:flex; align-items:center; gap:.8rem; }
-  .svc-hero-stats .stat i{ font-size:1.2rem; color:var(--gold); }
-  .svc-hero-stats .stat .t1{ font-size:.88rem; font-weight:600; color:#fff; }
-  .svc-hero-stats .stat .t2{ font-size:.76rem; color:#9fb0c9; }
-
   /* ---------- SUBPAGE HERO (Services / Pricing) ---------- */
   .page-hero{
     background:
@@ -314,142 +288,35 @@
   }
   .pricing-card{
     background:#fff; border:1px solid var(--line); border-radius:8px;
-    display:flex; flex-direction:column; position:relative; overflow:hidden;
+    padding:2.6rem 2rem; display:flex; flex-direction:column;
+    position:relative;
   }
   .pricing-card.featured{
-    background:var(--navy); border:none; box-shadow:0 24px 50px rgba(8,20,32,.28);
+    border:2px solid var(--gold); box-shadow:0 20px 40px rgba(23,35,58,.12);
   }
-  .plan-ribbon{
-    background:var(--gold); color:var(--navy-deep); text-align:center;
-    font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-    padding:.65rem 0;
+  .featured-badge{
+    position:absolute; top:-.9rem; left:50%; transform:translateX(-50%);
+    background:var(--gold); color:var(--navy-deep); font-size:.7rem; font-weight:700;
+    letter-spacing:.05em; text-transform:uppercase; padding:.4rem 1rem; border-radius:20px;
   }
-  .pricing-card-body{ padding:2.6rem 2rem; display:flex; flex-direction:column; flex-grow:1; }
-  .plan-icon{
-    width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    margin:0 auto 1.2rem; font-size:1.4rem;
+  .pricing-card h3{ font-size:1.3rem; margin-bottom:.5rem; }
+  .pricing-card .price{
+    font-family:'Fraunces', serif; font-size:2.3rem; font-weight:700; color:var(--navy);
+    margin-bottom:.3rem;
   }
-  .plan-icon.navy-circle{ background:var(--navy); color:#fff; }
-  .plan-icon.gold-circle{ background:var(--gold); color:var(--navy-deep); }
-  .pricing-card h3{ font-size:1.3rem; text-align:center; margin-bottom:.4rem; }
-  .pricing-card.featured h3{ color:#fff; }
-  .plan-sub{
-    text-align:center; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-    color:var(--gold-dark); margin-bottom:1.4rem; padding-bottom:1.3rem; border-bottom:1px solid var(--line);
-  }
-  .pricing-card.featured .plan-sub{ color:var(--gold); border-bottom-color:rgba(255,255,255,.12); }
-  .pricing-card .desc{ font-size:.88rem; color:var(--muted); margin-bottom:1.6rem; line-height:1.6; text-align:center; }
-  .pricing-card.featured .desc{ color:#c3cede; }
+  .pricing-card .price span{ font-size:.95rem; font-family:'Inter'; font-weight:500; color:var(--muted); }
+  .pricing-card .desc{ font-size:.88rem; color:var(--muted); margin-bottom:1.6rem; line-height:1.55; min-height:2.6rem; }
   .pricing-card ul{ list-style:none; flex-grow:1; margin-bottom:1.8rem; }
   .pricing-card ul li{
-    font-size:.88rem; color:var(--ink); padding-left:1.5rem; position:relative; margin-bottom:.75rem; line-height:1.5;
+    font-size:.9rem; color:var(--ink); padding-left:1.4rem; position:relative; margin-bottom:.75rem; line-height:1.5;
   }
   .pricing-card ul li::before{
     content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:var(--gold-dark);
-    position:absolute; left:0; top:.1rem; font-size:.78rem;
-  }
-  .pricing-card.featured ul li{ color:#e5ebf3; }
-  .pricing-card.featured ul li::before{ color:var(--gold); }
-  .btn-navy{
-    display:inline-flex; align-items:center; justify-content:center; width:100%;
-    padding:1rem; background:var(--navy); color:#fff; font-weight:700; font-size:.92rem;
-    border-radius:3px; transition:background .15s ease;
-  }
-  .btn-navy:hover{ background:var(--navy-deep); }
-  .pricing-card .btn-gold{ width:100%; }
-  .commitment-line{
-    text-align:center; font-size:.9rem; color:var(--muted); margin-top:2.2rem;
-    display:flex; align-items:center; justify-content:center; gap:.6rem;
-  }
-  .commitment-line i{ color:var(--gold-dark); }
-
-  /* ---------- EVERY PLAN INCLUDES ---------- */
-  .includes-band{ background:#f2ede2; }
-  .includes-grid{
-    display:grid; grid-template-columns:repeat(5, 1fr); gap:2rem; max-width:1150px; margin:0 auto;
-  }
-  .includes-item{ text-align:center; }
-  .includes-item .ico{
-    width:58px; height:58px; border-radius:50%; border:1px solid var(--line); background:#fff;
-    display:flex; align-items:center; justify-content:center; margin:0 auto .9rem; color:var(--navy); font-size:1.2rem;
-  }
-  .includes-item h3{ font-size:.95rem; margin-bottom:.4rem; font-weight:600; }
-  .includes-item p{ font-size:.8rem; color:var(--muted); line-height:1.55; }
-
-  /* ---------- FINAL CTA (image band) ---------- */
-  .final-band{
-    position:relative; color:#fff; text-align:left;
-    background:
-      linear-gradient(105deg, rgba(8,20,32,.88) 35%, rgba(8,20,32,.35) 100%),
-      url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
-  }
-  .final-band .inner{ padding:5.5rem 3.5rem; max-width:1200px; }
-  .final-band .eyebrow{ display:block; color:var(--gold); font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem; }
-  .final-band h2{ font-size:2.4rem; line-height:1.2; margin-bottom:1.1rem; color:#fff; max-width:32rem; }
-  .final-band p{ color:#dbe3ee; font-size:1.05rem; line-height:1.6; margin-bottom:1.8rem; max-width:28rem; }
-  .final-band .mini-stats{ display:flex; gap:1.8rem; margin-top:1.5rem; flex-wrap:wrap; }
-  .final-band .mini-stats span{ font-size:.82rem; color:#c3cede; display:flex; align-items:center; gap:.5rem; }
-  .final-band .mini-stats i{ color:var(--gold); }
-
-  .step-label{
-    display:block; text-align:center; font-size:.72rem; font-weight:700; letter-spacing:.06em;
-    text-transform:uppercase; color:var(--gold-dark); margin-bottom:.4rem;
-  }
-  .pricing-card.featured .step-label{ color:var(--gold); }
-  .plan-divider{ width:36px; height:2px; background:var(--gold-dark); margin:1rem auto 1.4rem; }
-  .pricing-card.featured .plan-divider{ background:var(--gold); }
-  .plan-footnote{ text-align:center; font-size:.8rem; color:var(--muted); margin-top:.9rem; }
-  .pricing-card.featured .plan-footnote{ color:#9fb0c9; }
-
-  /* ---------- IS THIS RIGHT FOR YOU ---------- */
-  .fit-grid{
-    display:grid; grid-template-columns:1fr auto 1fr; gap:2rem; align-items:start;
-    max-width:1100px; margin:0 auto;
-  }
-  .fit-card{ border-radius:8px; padding:2.2rem 2rem; }
-  .fit-card.yes{ background:#eef6f0; border:1px solid #cfe8d6; }
-  .fit-card.no{ background:#fbeeee; border:1px solid #f0d3d3; }
-  .fit-card h3{
-    display:flex; align-items:center; gap:.7rem; font-size:1.1rem; margin-bottom:1.4rem; font-family:'Inter'; font-weight:700;
-  }
-  .fit-card.yes h3 i{ color:#2f9e58; }
-  .fit-card.no h3 i{ color:#d9534f; }
-  .fit-card ul{ list-style:none; }
-  .fit-card ul li{
-    font-size:.92rem; color:var(--ink); padding-left:1.6rem; position:relative; margin-bottom:.9rem; line-height:1.5;
-  }
-  .fit-card.yes ul li::before{
-    content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#2f9e58;
     position:absolute; left:0; top:.15rem; font-size:.8rem;
   }
-  .fit-card.no ul li::before{
-    content:"\f00d"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#d9534f;
-    position:absolute; left:0; top:.15rem; font-size:.8rem;
-  }
-  .fit-vs{
-    width:52px; height:52px; border-radius:50%; background:var(--gold); color:var(--navy-deep);
-    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.82rem;
-    margin-top:2.6rem;
-  }
-
-  /* ---------- FAQ ACCORDION ---------- */
-  .faq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 3rem; max-width:1100px; margin:0 auto; }
-  .faq-acc{ border-bottom:1px solid var(--line); }
-  .faq-acc summary{
-    list-style:none; cursor:pointer; padding:1.15rem 0; font-size:.95rem; font-weight:600; color:var(--ink);
-    display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  }
-  .faq-acc summary::-webkit-details-marker{ display:none; }
-  .faq-acc summary .icon{
-    flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1.5px solid var(--gold-dark);
-    color:var(--gold-dark); display:flex; align-items:center; justify-content:center; font-size:.72rem;
-  }
-  .faq-acc[open] summary .icon{ background:var(--gold-dark); color:#fff; }
-  .faq-acc p{ font-size:.88rem; color:var(--muted); line-height:1.6; padding:0 2rem 1.3rem 0; }
-  .see-more-link{
-    display:block; text-align:center; margin-top:1.5rem; color:var(--gold-dark); font-weight:600; font-size:.9rem;
-  }
-  .see-more-link i{ margin-left:.4rem; }
+  .pricing-card .btn-gold, .pricing-card .btn-outline{ width:100%; }
+  .pricing-card .btn-outline{ border-color:var(--navy); color:var(--navy); }
+  .pricing-card .btn-outline:hover{ background:var(--navy); color:#fff; }
 
   .placeholder-note{
     max-width:1200px; margin:2.5rem auto 0; padding:1rem 1.4rem;
@@ -481,16 +348,6 @@
     .pricing-grid{ grid-template-columns:1fr; }
     .page-hero .inner{ padding:3.5rem 2rem; }
     .page-hero h1{ font-size:2.2rem; }
-    .includes-grid{ grid-template-columns:repeat(2, 1fr); gap:2rem 1.5rem; }
-    .final-band .inner{ padding:4rem 2rem; }
-    .final-band h2{ font-size:1.9rem; }
-    .svc-hero .inner{ padding:3.5rem 2rem 0; }
-    .svc-hero-top{ grid-template-columns:1fr; gap:2rem; }
-    .svc-hero h1{ font-size:2.1rem; }
-    .svc-hero-stats{ grid-template-columns:1fr; gap:1rem; }
-    .fit-grid{ grid-template-columns:1fr; }
-    .fit-vs{ display:none; }
-    .faq-grid{ grid-template-columns:1fr; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -507,6 +364,7 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="inner">
       <a class="logo" href="index.html">
@@ -528,24 +386,98 @@
       <div class="nav-links">
         <a class="btn-outline" href="services.html">Services</a>
         <a class="btn-outline" href="pricing.html">Pricing</a>
-        <a class="btn-outline active" href="testimonials.html">Testimonials</a>
+        <a class="btn-outline" href="testimonials.html">Testimonials</a>
         <a class="btn-gold small" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Call</a>
       </div>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
+  <!-- HERO -->
+  <section class="hero">
     <div class="inner">
-      <h1>What Business Owners Are Saying</h1>
-      <p>Real feedback from business owners who turned everyday spend into premium travel.</p>
+      <div>
+        <h1>Your Business Spends.<br>You Should Travel.</h1>
+        <p>We help business owners turn everyday expenses into premium travel and unforgettable experiences.</p>
+        <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop" alt="Business class airplane cabin at cruising altitude">
+        <div class="hero-stat">
+          <div class="big">250,000+</div>
+          <div class="small">Points earned by clients in 6 months</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS GRID -->
+  <!-- HOW IT WORKS -->
   <section class="section">
     <div class="inner">
-      <div class="testi-grid" style="grid-template-columns:repeat(3, 1fr);">
+      <h2 class="eyebrow-h2">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>We Analyze</h3>
+          <p>We review your cards, spending, and travel goals to find opportunities.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>We Strategize</h3>
+          <p>We build a custom plan to maximize points, perks, and value.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>You Travel More</h3>
+          <p>You earn more rewards and enjoy better travel — without spending more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="inner">
+      <h2>The Travel You Could Be Earning</h2>
+      <div class="earn-row">
+        <div class="earn-item">
+          <div class="ico"><i class="fa-solid fa-plane-up"></i></div>
+          <span>Business Class Flights</span>
+        </div>
+        <div class="earn-item">
+          <div class="ico"><i class="fa-solid fa-hotel"></i></div>
+          <span>5-Star Hotel Stays</span>
+        </div>
+        <div class="earn-item">
+          <div class="ico"><i class="fa-solid fa-umbrella-beach"></i></div>
+          <span>Unforgettable Experiences</span>
+        </div>
+        <div class="earn-item">
+          <div class="ico"><i class="fa-solid fa-sack-dollar"></i></div>
+          <span>Thousands in Travel Value</span>
+        </div>
+      </div>
+      <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
+      <div class="note">No obligation. Just value.</div>
+    </div>
+  </section>
+
+  <!-- STOP LEAVING REWARDS -->
+  <section class="split">
+    <div class="inner">
+      <img class="split-img" src="https://images.unsplash.com/photo-1540339832862-474599807836?q=80&w=1200&auto=format&fit=crop" alt="Business class airplane cabin">
+      <div class="split-copy">
+        <h2>Stop Leaving Rewards on the Table</h2>
+        <p>Most businesses are leaving thousands of dollars in travel rewards on the table every year. Let us build a strategy that changes that.</p>
+        <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="inner">
+      <h2 class="testi-head">What Business Owners Are Saying</h2>
+      <div class="testi-grid">
         <div class="testi-card">
           <div class="stars">★★★★★</div>
           <p>"Sam's strategy helped us earn over 250,000 points in 6 months. We flew our team to a conference in business class — on points!"</p>
@@ -576,40 +508,17 @@
           <p>"Best business decision we made last year. The travel value is unbelievable."</p>
           <div class="who"><b>Daniel H.</b>Manufacturing Company Owner</div>
         </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <p>"The custom roadmap made it obvious which cards to get and in what order. No more guessing."</p>
-          <div class="who"><b>Priya K.</b>Consulting Firm Owner</div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <p>"We upgraded our whole team to business class for a trade show and it barely cost us anything extra."</p>
-          <div class="who"><b>Marcus T.</b>Wholesale Distributor</div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <p>"Straightforward, no-pressure advice. They told us exactly what to expect before we committed to anything."</p>
-          <div class="who"><b>Jenna W.</b>Boutique Agency Owner</div>
-        </div>
-      </div>
-      <div class="placeholder-note">
-        Placeholder testimonials — swap these for real client quotes (with permission) before publishing.
       </div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final-band">
+  <section class="final-cta">
     <div class="inner">
-      <span class="eyebrow">Ready to Get Started?</span>
-      <h2>Your Business Could Be Next.</h2>
-      <p>Book a free strategy call and see what your spending could unlock.</p>
+      <h2>Let's Build Your Travel Rewards Strategy</h2>
+      <p>Book your free 20-minute strategy call and see how much travel your business can unlock.</p>
       <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
-      <div class="mini-stats">
-        <span><i class="fa-regular fa-clock"></i>20-Minute Call</span>
-        <span><i class="fa-solid fa-tag"></i>100% Free</span>
-        <span><i class="fa-solid fa-shield-halved"></i>No Obligation</span>
-      </div>
+      <div class="note">No pressure. Just valuable insights.</div>
     </div>
   </section>
 
