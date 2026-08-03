@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials | Margins and Miles</title>
+<title>Services &amp; Pricing | Margins and Miles</title>
 <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
 <link rel="icon" href="favicon.ico?v=3" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
@@ -234,8 +234,6 @@
   .final-cta p{ color:#dbe3ee; font-size:1.1rem; line-height:1.65; margin-bottom:2rem; max-width:30rem;}
   .final-cta .note{ margin-top:1rem; font-size:.85rem; color:#b9c6da;}
 
-  /* ---------- FOOTER STRIP ---------- */
-
   /* ---------- LEGAL BAR ---------- */
   .legal-bar{ background:var(--navy-deep); border-top:1px solid rgba(255,255,255,.08); }
   .legal-bar .inner{
@@ -247,7 +245,7 @@
   .legal-bar .legal-links a{ font-size:.74rem; color:#7d8fac; transition:color .15s ease; }
   .legal-bar .legal-links a:hover{ color:#fff; }
 
-  /* ---------- SPLIT HERO (image + stat row) ---------- */
+  /* ---------- SERVICES HERO (split) ---------- */
   .svc-hero{
     background:
       radial-gradient(ellipse at 20% 10%, rgba(15,182,80,0.12), transparent 55%),
@@ -272,6 +270,69 @@
   .svc-hero-stats .stat i{ font-size:1.2rem; color:var(--gold); }
   .svc-hero-stats .stat .t1{ font-size:.88rem; font-weight:600; color:#fff; }
   .svc-hero-stats .stat .t2{ font-size:.76rem; color:#9fb0c9; }
+
+  /* ---------- PROCESS ---------- */
+  .process-row{
+    display:grid; grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+    align-items:start; max-width:1150px; margin:0 auto; gap:.5rem;
+  }
+  .process-step{ text-align:center; padding:0 .5rem; }
+  .process-step .circle{
+    width:64px; height:64px; border-radius:50%;
+    background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; margin:0 auto .9rem; position:relative;
+  }
+  .process-step .circle .step-no{
+    position:absolute; bottom:-.6rem; left:50%; transform:translateX(-50%);
+    background:var(--gold); color:var(--navy-deep); font-family:'Fraunces', serif; font-weight:700;
+    font-size:.72rem; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  }
+  .process-step h3{ font-size:1.05rem; margin:.8rem 0 .6rem; }
+  .process-step p{ font-size:.85rem; color:var(--muted); line-height:1.55; }
+  .process-arrow{ display:flex; align-items:center; justify-content:center; padding-top:1.7rem; color:var(--gold); font-size:1.1rem; }
+
+  /* ---------- WHY US BAND ---------- */
+  .why-band{ background:var(--navy); color:#fff; }
+  .why-band .inner{ padding:4.5rem 3.5rem; }
+  .why-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:2.5rem; max-width:1100px; margin:0 auto; }
+  .why-item{ text-align:center; }
+  .why-item .ico{
+    width:60px; height:60px; border-radius:50%; border:1.5px solid rgba(15,182,80,.5);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 1.1rem; color:var(--gold); font-size:1.3rem;
+  }
+  .why-item h3{ font-size:1.05rem; color:#fff; margin-bottom:.6rem; font-weight:600; }
+  .why-item p{ font-size:.85rem; color:#a9b8cd; line-height:1.55; }
+
+  /* ---------- FAQ ACCORDION ---------- */
+  .faq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 3rem; max-width:1100px; margin:0 auto; }
+  .faq-acc{ border-bottom:1px solid var(--line); }
+  .faq-acc summary{
+    list-style:none; cursor:pointer; padding:1.15rem 0; font-size:.98rem; font-weight:600; color:var(--ink);
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  }
+  .faq-acc summary::-webkit-details-marker{ display:none; }
+  .faq-acc summary .icon{
+    flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1.5px solid var(--gold-dark);
+    color:var(--gold-dark); display:flex; align-items:center; justify-content:center; font-size:.72rem;
+  }
+  .faq-acc[open] summary .icon{ background:var(--gold-dark); color:#fff; }
+  .faq-acc p{ font-size:.9rem; color:var(--muted); line-height:1.6; padding:0 2rem 1.3rem 0; }
+
+  /* ---------- FINAL CTA (image band) ---------- */
+  .final-band{
+    position:relative; color:#fff; text-align:left;
+    background:
+      linear-gradient(105deg, rgba(5,62,27,.88) 35%, rgba(5,62,27,.35) 100%),
+      url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  }
+  .final-band .inner{ padding:5.5rem 3.5rem; max-width:1200px; }
+  .final-band .eyebrow{ color:var(--gold); }
+  .final-band h2{ font-size:2.4rem; line-height:1.2; margin-bottom:1.1rem; color:#fff; max-width:32rem; }
+  .final-band p{ color:#dbe3ee; font-size:1.05rem; line-height:1.6; margin-bottom:1.8rem; max-width:28rem; }
+  .final-band .mini-stats{ display:flex; gap:1.8rem; margin-top:1.5rem; flex-wrap:wrap; }
+  .final-band .mini-stats span{ font-size:.82rem; color:#c3cede; display:flex; align-items:center; gap:.5rem; }
+  .final-band .mini-stats i{ color:var(--gold); }
 
   /* ---------- SUBPAGE HERO (Services / Pricing) ---------- */
   .page-hero{
@@ -432,25 +493,6 @@
     margin-top:2.6rem;
   }
 
-  /* ---------- FAQ ACCORDION ---------- */
-  .faq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 3rem; max-width:1100px; margin:0 auto; }
-  .faq-acc{ border-bottom:1px solid var(--line); }
-  .faq-acc summary{
-    list-style:none; cursor:pointer; padding:1.15rem 0; font-size:.95rem; font-weight:600; color:var(--ink);
-    display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  }
-  .faq-acc summary::-webkit-details-marker{ display:none; }
-  .faq-acc summary .icon{
-    flex-shrink:0; width:22px; height:22px; border-radius:50%; border:1.5px solid var(--gold-dark);
-    color:var(--gold-dark); display:flex; align-items:center; justify-content:center; font-size:.72rem;
-  }
-  .faq-acc[open] summary .icon{ background:var(--gold-dark); color:#fff; }
-  .faq-acc p{ font-size:.88rem; color:var(--muted); line-height:1.6; padding:0 2rem 1.3rem 0; }
-  .see-more-link{
-    display:block; text-align:center; margin-top:1.5rem; color:var(--gold-dark); font-weight:600; font-size:.9rem;
-  }
-  .see-more-link i{ margin-left:.4rem; }
-
   .placeholder-note{
     max-width:1200px; margin:2.5rem auto 0; padding:1rem 1.4rem;
     background:#eaf7ee; border:1px dashed var(--gold-dark); border-radius:6px;
@@ -463,82 +505,6 @@
   .faq-item p{ font-size:.92rem; color:var(--muted); line-height:1.65; }
 
   /* ---------- TABLET ---------- */
-  /* ---------- HORIZONTAL CASE ROWS ---------- */
-  .case-stack{ display:flex; flex-direction:column; gap:1.6rem; }
-  .case-row{
-    display:grid; grid-template-columns:190px 1fr 1.3fr 200px;
-    background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;
-    box-shadow:0 14px 34px rgba(7,96,42,.06);
-  }
-
-  .case-photo{ position:relative; min-height:100%; }
-  .case-photo img{ width:100%; height:100%; object-fit:cover; }
-  .case-photo::after{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(0deg, rgba(5,62,27,.85) 0%, rgba(5,62,27,.25) 65%, rgba(5,62,27,.15) 100%);
-  }
-  .case-biz{ position:absolute; left:1.2rem; bottom:1rem; right:1rem; z-index:2; color:#fff; }
-  .case-biz .type{ font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:#cfd9e8; margin-bottom:.15rem; }
-  .case-biz .name{ font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; line-height:1.25; }
-
-  .case-stats{
-    display:flex; flex-direction:column; justify-content:center; gap:1rem;
-    padding:1.6rem 1.6rem; border-right:1px solid var(--line);
-  }
-  .case-stat-pair{ display:flex; gap:1.4rem; }
-  .case-stat .label{ font-size:.66rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:.3rem; }
-  .case-stat .value{ font-family:'Fraunces', serif; font-size:1.35rem; font-weight:700; color:var(--navy); }
-  .case-stat .value small{ font-family:'Inter'; font-size:1.05rem; font-weight:500; color:var(--muted); }
-  .redeem-bar-wrap{ margin-top:.9rem; }
-  .case-bar-label{ display:flex; justify-content:space-between; font-size:.68rem; color:var(--muted); margin-bottom:.4rem; }
-  .case-bar-label b{ color:var(--gold-dark); font-weight:700; }
-  .case-bar-track{ height:7px; border-radius:4px; background:var(--line); overflow:hidden; }
-  .case-bar-fill{ height:100%; border-radius:4px; background:linear-gradient(90deg, var(--gold-dark), var(--gold)); }
-
-  .case-trip{ padding:1.6rem 1.6rem; border-right:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; }
-  .case-trip .trip-label{
-    display:flex; align-items:center; gap:.5rem; font-size:.68rem; text-transform:uppercase;
-    letter-spacing:.06em; color:var(--gold-dark); font-weight:700; margin-bottom:.6rem;
-  }
-  .case-trip .trip-dest{ font-family:'Fraunces', serif; font-size:1.2rem; margin-bottom:.5rem; line-height:1.25; }
-  .case-trip .trip-detail{ font-size:.86rem; color:var(--muted); line-height:1.55; margin-bottom:.7rem; }
-  .case-trip .trip-cost{
-    font-size:.78rem; color:var(--ink); background:var(--cream); border:1px solid var(--line);
-    border-radius:4px; padding:.45rem .7rem; display:inline-block; width:fit-content;
-  }
-  .case-trip .trip-cost b{ color:var(--gold-dark); }
-
-  .case-value{
-    padding:1.6rem 1.4rem; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; background:linear-gradient(180deg, #eef8f1, #ddf0e3);
-  }
-  .case-value .label{ font-size:.66rem; text-transform:uppercase; letter-spacing:.06em; color:var(--gold-dark); margin-bottom:.5rem; font-weight:700; }
-  .case-value .amount{ font-family:'Fraunces', serif; font-size:1.4rem; font-weight:700; color:var(--navy); line-height:1.2; }
-  .case-value .note{ font-size:.68rem; color:var(--muted); margin-top:.4rem; }
-
-  /* ---------- TOTAL VALUE SUMMARY ---------- */
-  .total-value{
-    margin-top:2.2rem; padding:2.4rem 2rem; text-align:center;
-    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-    border-radius:10px;
-  }
-  .total-value .label{
-    font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--gold); margin-bottom:.7rem;
-  }
-  .total-value .amount{
-    font-family:'Fraunces', serif; font-size:2.6rem; font-weight:700; color:#fff; line-height:1.15;
-  }
-  .total-value .sub{ font-size:.88rem; color:#b9c6da; margin-top:.6rem; }
-
-  /* ---------- REASSURANCE TEXT ---------- */
-  .reassurance{
-    max-width:760px; margin:2.4rem auto 0; text-align:center;
-  }
-  .reassurance i{ font-size:1.3rem; color:var(--gold-dark); margin-bottom:1rem; display:block; }
-  .reassurance p{ font-size:1.05rem; color:var(--ink); line-height:1.7; }
-  .reassurance p b{ color:var(--navy); }
-
   @media (max-width:1000px){
     .inner{ padding:0 2rem; }
     header .inner{ padding:1.4rem 2rem; }
@@ -555,22 +521,21 @@
     .legal-bar .inner{ flex-direction:column; text-align:center; padding:1.3rem 2rem; }
     .service-grid{ grid-template-columns:1fr; }
     .pricing-grid{ grid-template-columns:1fr; }
+    .fit-grid{ grid-template-columns:1fr; }
+    .fit-vs{ display:none; }
     .page-hero .inner{ padding:3.5rem 2rem; }
-    .case-row{ grid-template-columns:1fr; }
-    .case-photo{ height:160px; }
-    .case-stats{ border-right:none; border-bottom:1px solid var(--line); }
-    .case-trip{ border-right:none; border-bottom:1px solid var(--line); }
     .page-hero h1{ font-size:2.2rem; }
-    .includes-grid{ grid-template-columns:repeat(2, 1fr); gap:2rem 1.5rem; }
-    .final-band .inner{ padding:4rem 2rem; }
-    .final-band h2{ font-size:1.9rem; }
     .svc-hero .inner{ padding:3.5rem 2rem 0; }
     .svc-hero-top{ grid-template-columns:1fr; gap:2rem; }
     .svc-hero h1{ font-size:2.1rem; }
     .svc-hero-stats{ grid-template-columns:1fr; gap:1rem; }
-    .fit-grid{ grid-template-columns:1fr; }
-    .fit-vs{ display:none; }
-    .faq-grid{ grid-template-columns:1fr; }
+    .process-row{ grid-template-columns:1fr; gap:2.2rem; }
+    .process-arrow{ display:none; }
+    .why-band .inner{ padding:3.5rem 2rem; }
+    .why-grid{ grid-template-columns:repeat(2, 1fr); gap:2rem; }
+    .faq-grid{ grid-template-columns:1fr; gap:0; }
+    .final-band .inner{ padding:4rem 2rem; }
+    .final-band h2{ font-size:1.9rem; }
   }
 
   /* ---------- MOBILE ---------- */
@@ -606,162 +571,295 @@
         </div>
       </a>
       <div class="nav-links">
-        <a class="btn-outline" href="services.html">Services</a>
-        <a class="btn-outline active" href="testimonials.html">Testimonials</a>
+        <a class="btn-outline active" href="services.html">Services</a>
+        <a class="btn-outline" href="testimonials.html">Testimonials</a>
         <a class="btn-gold small" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Call</a>
       </div>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
+  <!-- HERO -->
+  <section class="svc-hero">
     <div class="inner">
-      <h1>Real Results From Real Clients</h1>
-      <p>The exact spend, points earned, and trips booked — real numbers from real Margins and Miles clients.</p>
+      <div class="svc-hero-top">
+        <div>
+          <span class="eyebrow">Our Services</span>
+          <h1>Every Business Is Different. Your Rewards Strategy Should Be Too.</h1>
+          <p>No generic advice. No influencer hype. Just a customized strategy based on how your business actually spends money.</p>
+          <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
+        </div>
+        <div class="svc-hero-img">
+          <img src="https://images.unsplash.com/photo-1714756123393-929709970fdb?q=80&w=1200&auto=format&fit=crop" alt="Sunset view from an airplane window">
+        </div>
+      </div>
+      <div class="svc-hero-stats">
+        <div class="stat"><i class="fa-solid fa-shield-halved"></i><div><div class="t1">No Obligation</div><div class="t2">Just value.</div></div></div>
+        <div class="stat"><i class="fa-regular fa-clock"></i><div><div class="t1">20-Minute Call</div><div class="t2">100% Free.</div></div></div>
+        <div class="stat"><i class="fa-regular fa-lightbulb"></i><div><div class="t1">Actionable Insights</div><div class="t2">No pressure.</div></div></div>
+      </div>
     </div>
   </section>
 
+  <!-- PROCESS -->
   <section class="section">
     <div class="inner">
-      <p style="text-align:center; max-width:36rem; margin:0 auto 3.5rem; color:var(--muted); font-size:1.05rem; line-height:1.65;">A look at how businesses like yours turned routine monthly spending into premium trips — the exact spend, the points earned, and where those points went.</p>
-
-      <div class="case-stack">
-
-        <!-- CASE 1: E-commerce -->
-        <div class="case-row">
-          <div class="case-photo">
-            <img src="https://images.unsplash.com/photo-1758543144598-9d954f44799a?q=80&w=800&auto=format&fit=crop" alt="Big Ben and Westminster Bridge in London">
-            <div class="case-biz">
-              <div class="type">E-Commerce Store</div>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat-pair">
-              <div class="case-stat"><div class="label">Monthly Spend</div><div class="value">$9,200<small>/mo</small></div></div>
-              <div class="case-stat"><div class="label">Points Earned</div><div class="value">675K<small>/5mo</small></div></div>
-            </div>
-            </div>
-          <div class="case-trip">
-            <div class="trip-label"><i class="fa-solid fa-plane"></i> The Trip</div>
-            <div class="trip-dest">First Class to London</div>
-            <div class="trip-detail">4 nights at a luxury hotel.</div>
-            <div class="trip-cost">Redeemed <b>335,000 pts</b></div>
-            <div class="redeem-bar-wrap">
-              <div class="case-bar-label"><span>% of Points Redeemed</span><b>50%</b></div>
-              <div class="case-bar-track"><div class="case-bar-fill" style="width:50%;"></div></div>
-            </div>
-          </div>
-          <div class="case-value">
-            <div class="label">Est. Cash Value</div>
-            <div class="amount">$8,000&ndash;$13,000</div>
-            <div class="note">vs. points spent</div>
-          </div>
+      <span class="eyebrow" style="text-align:center; color:var(--gold-dark);">Our Process</span>
+      <h2 class="eyebrow-h2">A Simple Process. Powerful Results.</h2>
+      <div class="process-row">
+        <div class="process-step">
+          <div class="circle"><i class="fa-solid fa-magnifying-glass"></i><span class="step-no">1</span></div>
+          <h3>Business Spending Review</h3>
+          <p>We analyze your monthly expenses, vendors, advertising, software, inventory, travel, and existing credit cards.</p>
         </div>
-
-        <!-- CASE 2: Lawn Care -->
-        <div class="case-row">
-          <div class="case-photo">
-            <img src="https://images.unsplash.com/photo-1747370273818-324ea9b8fa16?q=80&w=800&auto=format&fit=crop" alt="Turquoise water in Cancun">
-            <div class="case-biz">
-              <div class="type">Lawn Care Company</div>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat-pair">
-              <div class="case-stat"><div class="label">Monthly Spend</div><div class="value">$3,200<small>/mo</small></div></div>
-              <div class="case-stat"><div class="label">Points Earned</div><div class="value">455K<small>/9mo</small></div></div>
-            </div>
-            </div>
-          <div class="case-trip">
-            <div class="trip-label"><i class="fa-solid fa-plane"></i> The Trip</div>
-            <div class="trip-dest">First Class to Cancun</div>
-            <div class="trip-detail">6 nights at an all-inclusive resort.</div>
-            <div class="trip-cost">Redeemed <b>412,000 pts</b></div>
-            <div class="redeem-bar-wrap">
-              <div class="case-bar-label"><span>% of Points Redeemed</span><b>91%</b></div>
-              <div class="case-bar-track"><div class="case-bar-fill" style="width:91%;"></div></div>
-            </div>
-          </div>
-          <div class="case-value">
-            <div class="label">Est. Cash Value</div>
-            <div class="amount">$5,500&ndash;$9,000</div>
-            <div class="note">vs. points spent</div>
-          </div>
+        <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="circle"><i class="fa-solid fa-list-check"></i><span class="step-no">2</span></div>
+          <h3>Rewards Audit</h3>
+          <p>We identify missed earning opportunities, underperforming cards, unnecessary fees, and bonus categories you're missing.</p>
         </div>
-
-        <!-- CASE 3: House Cleaning -->
-        <div class="case-row">
-          <div class="case-photo">
-            <img src="https://images.unsplash.com/photo-1665513950300-127867f8c21b?q=80&w=800&auto=format&fit=crop" alt="Palm trees on the beach in Maui, Hawaii">
-            <div class="case-biz">
-              <div class="type">House Cleaning Service</div>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat-pair">
-              <div class="case-stat"><div class="label">Monthly Spend</div><div class="value">$4,500<small>/mo</small></div></div>
-              <div class="case-stat"><div class="label">Points Earned</div><div class="value">325K<small>/6mo</small></div></div>
-            </div>
-            </div>
-          <div class="case-trip">
-            <div class="trip-label"><i class="fa-solid fa-plane"></i> The Trips</div>
-            <div class="trip-dest">Multiple Flights: Maui, Phoenix, Orlando &amp; Boston</div>
-            <div class="trip-detail">Several separate trips booked across the year.</div>
-            <div class="trip-cost">Redeemed <b>180,000 pts</b></div>
-            <div class="redeem-bar-wrap">
-              <div class="case-bar-label"><span>% of Points Redeemed</span><b>55%</b></div>
-              <div class="case-bar-track"><div class="case-bar-fill" style="width:55%;"></div></div>
-            </div>
-          </div>
-          <div class="case-value">
-            <div class="label">Est. Cash Value</div>
-            <div class="amount">$2,600&ndash;$4,000</div>
-            <div class="note">vs. points spent</div>
-          </div>
+        <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="circle"><i class="fa-solid fa-map"></i><span class="step-no">3</span></div>
+          <h3>Custom Roadmap</h3>
+          <p>You'll receive a personalized plan with card recommendations, spending assignments, application timing, and travel redemption strategy.</p>
         </div>
-
-        <!-- CASE 4: Custom Manufacturer -->
-        <div class="case-row">
-          <div class="case-photo">
-            <img src="https://images.unsplash.com/photo-1667489013368-48b7213fd42b?q=80&w=800&auto=format&fit=crop" alt="Historic oak-lined street in Savannah, Georgia">
-            <div class="case-biz">
-              <div class="type">Custom Manufacturer</div>
-            </div>
-          </div>
-          <div class="case-stats">
-            <div class="case-stat-pair">
-              <div class="case-stat"><div class="label">Monthly Spend</div><div class="value">$20,500<small>/mo</small></div></div>
-              <div class="case-stat"><div class="label">Points Earned</div><div class="value">810K<small>/4mo</small></div></div>
-            </div>
-            </div>
-          <div class="case-trip">
-            <div class="trip-label"><i class="fa-solid fa-plane"></i> The Trip</div>
-            <div class="trip-dest">First Class to Savannah, GA &amp; Charleston, SC</div>
-            <div class="trip-detail">4 nights in each city at a luxury hotel.</div>
-            <div class="trip-cost">Redeemed <b>220,000 pts</b></div>
-            <div class="redeem-bar-wrap">
-              <div class="case-bar-label"><span>% of Points Redeemed</span><b>27%</b></div>
-              <div class="case-bar-track"><div class="case-bar-fill" style="width:27%;"></div></div>
-            </div>
-          </div>
-          <div class="case-value">
-            <div class="label">Est. Cash Value</div>
-            <div class="amount">$2,700&ndash;$4,500</div>
-            <div class="note">vs. points spent</div>
-          </div>
+        <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="circle"><i class="fa-solid fa-headset"></i><span class="step-no">4</span></div>
+          <h3>Ongoing Support</h3>
+          <p>Businesses evolve. We provide ongoing recommendations and support as your spending, goals, and opportunities change.</p>
         </div>
-
       </div>
+    </div>
+  </section>
 
-      <div class="total-value">
-        <div class="label">Total Travel Value Unlocked</div>
-        <div class="amount">$18,800&ndash;$30,500</div>
-        <div class="sub">Combined estimated value across these 4 businesses</div>
+  <!-- COMPREHENSIVE SERVICES -->
+  <section class="section" style="background:var(--cream); padding-top:0;">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; color:var(--gold-dark);">What We Help With</span>
+      <h2 class="eyebrow-h2">Comprehensive Services for Business Owners</h2>
+      <div class="service-grid" style="grid-template-columns:repeat(5, 1fr);">
+        <div class="service-card" style="padding:1.8rem 1.4rem;">
+          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-credit-card"></i></div>
+          <h3 style="font-size:1.05rem;">Credit Card Strategy</h3>
+          <p style="font-size:.85rem;">We recommend the right cards based on your business spending — not commissions.</p>
+          <ul style="font-size:.82rem;">
+            <li>Business card selection</li>
+            <li>Personal card integration</li>
+            <li>Sign-up bonus planning</li>
+            <li>Application timing</li>
+            <li>Category optimization</li>
+          </ul>
+        </div>
+        <div class="service-card" style="padding:1.8rem 1.4rem;">
+          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-plane"></i></div>
+          <h3 style="font-size:1.05rem;">Travel Rewards Planning</h3>
+          <p style="font-size:.85rem;">Turn everyday expenses into premium travel. We help you maximize:</p>
+          <ul style="font-size:.82rem;">
+            <li>Airline miles</li>
+            <li>Hotel points</li>
+            <li>Flexible currencies</li>
+            <li>Transfer partners</li>
+            <li>Award sweet spots</li>
+          </ul>
+        </div>
+        <div class="service-card" style="padding:1.8rem 1.4rem;">
+          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-chart-column"></i></div>
+          <h3 style="font-size:1.05rem;">Spending Optimization</h3>
+          <p style="font-size:.85rem;">Many businesses earn 1x when they could earn 3–5x. We put every dollar to work.</p>
+          <ul style="font-size:.82rem;">
+            <li>Advertising</li>
+            <li>Shipping &amp; freight</li>
+            <li>Office supplies</li>
+            <li>Software &amp; SaaS</li>
+            <li>Fuel &amp; travel</li>
+          </ul>
+        </div>
+        <div class="service-card" style="padding:1.8rem 1.4rem;">
+          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-building"></i></div>
+          <h3 style="font-size:1.05rem;">Premium Travel Guidance</h3>
+          <p style="font-size:.85rem;">We teach you how to redeem for maximum value and unforgettable experiences.</p>
+          <ul style="font-size:.82rem;">
+            <li>Business class flights</li>
+            <li>Luxury &amp; boutique hotels</li>
+            <li>Hyatt &amp; hotel partners</li>
+            <li>International travel</li>
+            <li>Family vacations</li>
+          </ul>
+        </div>
+        <div class="service-card" style="padding:1.8rem 1.4rem;">
+          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h3 style="font-size:1.05rem;">Ongoing Strategy</h3>
+          <p style="font-size:.85rem;">Your rewards strategy should evolve with your business.</p>
+          <ul style="font-size:.82rem;">
+            <li>Quarterly check-ins</li>
+            <li>New card &amp; bonus alerts</li>
+            <li>Benefit &amp; fee reviews</li>
+            <li>Spending &amp; goal updates</li>
+            <li>Strategy refinements</li>
+          </ul>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="reassurance">
-        <i class="fa-solid fa-shield-halved"></i>
-        <p>Every one of these results came <b>without sacrificing profitability or compromising on expense management.</b> These businesses didn't spend more to earn more — they simply put their existing spend to work.</p>
+
+  <!-- PRICING -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">How We Work Together</span>
+      <h2 class="eyebrow-h2">Choose the Level of Support That Fits Your Business</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card-body">
+            <div class="plan-icon navy-circle"><i class="fa-regular fa-calendar"></i></div>
+            <span class="step-label">1. Complimentary</span>
+            <h3>Strategy Call</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">A 20-minute discovery call to understand your business, spending, and travel goals.</div>
+            <ul>
+              <li>Review your spending &amp; current cards</li>
+              <li>Identify potential opportunities</li>
+              <li>Answer your top questions</li>
+              <li>Determine next best steps</li>
+            </ul>
+            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Call</a>
+            <div class="plan-footnote">No obligation. Just valuable insights.</div>
+          </div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="plan-ribbon">Most Popular</div>
+          <div class="pricing-card-body">
+            <div class="plan-icon gold-circle"><i class="fa-solid fa-book-open"></i></div>
+            <span class="step-label">2. Custom</span>
+            <h3>Rewards Strategy</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">A one-time engagement where we build your personalized rewards roadmap.</div>
+            <ul>
+              <li>Custom card recommendations</li>
+              <li>Spending optimization plan</li>
+              <li>Application timing strategy</li>
+              <li>Redemption strategy &amp; guidance</li>
+              <li>Written action plan &amp; next steps</li>
+              <li>30-day email support</li>
+            </ul>
+            <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
+            <div class="plan-footnote">One strategy. Years of premium travel.</div>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-body">
+            <div class="plan-icon navy-circle"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <span class="step-label">3. Ongoing</span>
+            <h3>Advisory Membership</h3>
+            <div class="plan-divider"></div>
+            <div class="desc">Continuous optimization as your business, spending, and opportunities evolve.</div>
+            <ul>
+              <li>Quarterly strategy reviews</li>
+              <li>New card &amp; bonus alerts</li>
+              <li>Annual fee &amp; benefits reviews</li>
+              <li>Spending &amp; goal adjustments</li>
+              <li>Redemption guidance</li>
+              <li>Ongoing expert support</li>
+            </ul>
+            <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
+            <div class="plan-footnote">Stay ahead. Earn more. Travel better.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IS THIS RIGHT FOR YOU -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Is This Right for You?</span>
+      <div class="fit-grid" style="margin-top:2.5rem;">
+        <div class="fit-card yes">
+          <h3><i class="fa-solid fa-circle-check"></i> You're a Great Fit If...</h3>
+          <ul>
+            <li>You're a business owner or entrepreneur</li>
+            <li>You spend $3,000+ per month in your business</li>
+            <li>You want to travel more (and better)</li>
+            <li>You're tired of leaving rewards on the table</li>
+            <li>You want a clear, simple strategy that works</li>
+          </ul>
+        </div>
+        <div class="fit-vs">VS</div>
+        <div class="fit-card no">
+          <h3><i class="fa-solid fa-circle-xmark"></i> We May Not Be the Right Fit If...</h3>
+          <ul>
+            <li>You're not open to using credit cards strategically</li>
+            <li>You're looking for do-it-yourself tips and tricks</li>
+            <li>You don't have consistent business spending</li>
+            <li>You're not interested in maximizing travel value</li>
+            <li>You're looking for free, generic advice</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CLIENTS WORK WITH US -->
+  <section class="why-band">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block;">Why Clients Work With Us</span>
+      <h2 class="eyebrow-h2" style="color:#fff;">More Than Points. A Better Way to Travel.</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="ico"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>No Generic Advice</h3>
+          <p>Every strategy is customized to your business, spending, and travel goals.</p>
+        </div>
+        <div class="why-item">
+          <div class="ico"><i class="fa-solid fa-dollar-sign"></i></div>
+          <h3>No Extra Spending</h3>
+          <p>We help you earn more rewards with the money you're already spending.</p>
+        </div>
+        <div class="why-item">
+          <div class="ico"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Business Focused</h3>
+          <p>Our strategies are built specifically for entrepreneurs and business owners.</p>
+        </div>
+        <div class="why-item">
+          <div class="ico"><i class="fa-solid fa-globe"></i></div>
+          <h3>Travel First</h3>
+          <p>The goal isn't points. The goal is unforgettable experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Frequently Asked Questions</span>
+      <h2 class="eyebrow-h2">Common Questions. Clear Answers.</h2>
+      <div class="faq-grid">
+        <details class="faq-acc">
+          <summary>How long does a strategy call take?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
+          <p>About 20 minutes. We'll ask a few questions about your spending and travel goals, then walk you through where the opportunity is.</p>
+        </details>
+        <details class="faq-acc">
+          <summary>Can I use my existing credit cards?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
+          <p>In most cases, yes. We'll build your strategy around the cards you already have, then recommend additions only where they clearly add value.</p>
+        </details>
+        <details class="faq-acc">
+          <summary>Do I need a business to work with you?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
+          <p>Yes — our strategies are built around business spending, typically $2,000–$5,000+ per month across cards.</p>
+        </details>
+        <details class="faq-acc">
+          <summary>Do you book travel for me?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
+          <p>We guide you through booking the best redemptions yourself, and offer hands-on support for more complex bookings.</p>
+        </details>
+        <details class="faq-acc">
+          <summary>Will I have to spend more money?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
+          <p>No. The goal is to earn more from the spending you're already doing — not to encourage spending you wouldn't otherwise make.</p>
+        </details>
+        <details class="faq-acc">
+          <summary>Will this hurt my credit score?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
+          <p>We factor your credit profile into every recommendation and talk through any impact honestly before you apply for anything.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -770,8 +868,8 @@
   <section class="final-band">
     <div class="inner">
       <span class="eyebrow">Ready to Get Started?</span>
-      <h2>Your Business Could Be Next.</h2>
-      <p>Book a free strategy call and see what your spending could unlock.</p>
+      <h2>Stop Leaving Travel Rewards on the Table</h2>
+      <p>Most businesses are earning far fewer rewards than they could be. Let's build a strategy that changes that.</p>
       <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
       <div class="mini-stats">
         <span><i class="fa-regular fa-clock"></i>20-Minute Call</span>
