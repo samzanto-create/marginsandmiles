@@ -74,11 +74,17 @@
   /* ---------- HEADER ---------- */
   header{
     background:var(--navy);
+    position:relative;
   }
   header .inner{
     padding:1.5rem 3.5rem;
     display:flex; align-items:center; justify-content:space-between;
   }
+  .hamburger{
+    display:none; background:none; border:none; cursor:pointer; padding:.5rem; margin:-.5rem;
+  }
+  .hamburger span{ display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
+  .hamburger span + span{ margin-top:5px; }
   .logo{
     display:flex; align-items:center; gap:.8rem;
     color:#fff;
@@ -242,7 +248,10 @@
     display:flex; justify-content:space-between; align-items:center;
     padding:1.3rem 3.5rem; flex-wrap:wrap; gap:.8rem;
   }
-  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; }
+  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; display:block; margin-top:.2rem; }
+  .footer-brand{ display:flex; align-items:center; gap:.7rem; }
+  .footer-brand svg{ width:30px; height:30px; flex-shrink:0; }
+  .footer-brand .fb-name{ font-family:'Fraunces', serif; font-weight:700; font-size:.8rem; color:#fff; letter-spacing:.02em; line-height:1.3; }
   .legal-bar .legal-links{ display:flex; gap:1.6rem; }
   .legal-bar .legal-links a{ font-size:.74rem; color:#7d8fac; transition:color .15s ease; }
   .legal-bar .legal-links a:hover{ color:#fff; }
@@ -553,6 +562,7 @@
     .final-cta .inner{ padding:4rem 2rem; }
     .final-cta h2{ font-size:2.1rem; }
     .legal-bar .inner{ flex-direction:column; text-align:center; padding:1.3rem 2rem; }
+    .footer-brand{ flex-direction:column; margin:0 auto 1rem; text-align:center; }
     .service-grid{ grid-template-columns:1fr; }
     .pricing-grid{ grid-template-columns:1fr; }
     .page-hero .inner{ padding:3.5rem 2rem; }
@@ -580,8 +590,16 @@
     .hero h1{ font-size:2rem; }
     .cta-strip .inner{ padding:3rem 1.5rem; }
     .logo .name{ font-size:.95rem; }
-    .nav-links{ flex-wrap:wrap; justify-content:flex-end; gap:.6rem; }
-    .btn-outline{ padding:.55rem 1rem; font-size:.78rem; }
+    .hamburger{ display:block; }
+    .nav-links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background:var(--navy); flex-direction:column; align-items:stretch; gap:0;
+      padding:.5rem 1.5rem 1.5rem; border-top:1px solid rgba(255,255,255,.1);
+      box-shadow:0 12px 24px rgba(0,0,0,.25); z-index:50;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ width:100%; text-align:center; margin-top:.8rem; }
+    .btn-outline{ padding:.7rem 1rem; font-size:.85rem; }
   }
 </style>
 </head>
@@ -605,7 +623,11 @@
           <span class="tag">Business Spending Optimization</span>
         </div>
       </a>
+      <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-links">
+        <a class="btn-outline" href="about.html">About</a>
         <a class="btn-outline" href="services.html">Services</a>
         <a class="btn-outline active" href="testimonials.html">Testimonials</a>
         <a class="btn-gold small" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Call</a>
@@ -783,7 +805,22 @@
 
   <div class="legal-bar">
     <div class="inner">
-      <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Margins and Miles logo">
+          <rect x="0" y="0" width="100" height="100" rx="22" fill="#0c1b2e"/>
+          <rect x="16" y="61" width="11" height="17" rx="1.5" fill="#d6a44e" opacity="0.45"/>
+          <rect x="34" y="49" width="11" height="29" rx="1.5" fill="#d6a44e" opacity="0.7"/>
+          <rect x="52" y="34" width="11" height="44" rx="1.5" fill="#d6a44e"/>
+          <path d="M63 33 L73 21" stroke="#d6a44e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+          <g transform="translate(62,2) rotate(20) scale(1.3)">
+            <path d="M2 21 L23 12 L2 3 L2 10 L17 12 L2 14 Z" fill="#d6a44e"/>
+          </g>
+        </svg>
+        <div>
+          <span class="fb-name">MARGINS AND MILES</span>
+          <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+        </div>
+      </div>
       <div class="legal-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
