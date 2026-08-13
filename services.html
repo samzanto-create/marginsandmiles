@@ -74,11 +74,17 @@
   /* ---------- HEADER ---------- */
   header{
     background:var(--navy);
+    position:relative;
   }
   header .inner{
     padding:1.5rem 3.5rem;
     display:flex; align-items:center; justify-content:space-between;
   }
+  .hamburger{
+    display:none; background:none; border:none; cursor:pointer; padding:.5rem; margin:-.5rem;
+  }
+  .hamburger span{ display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
+  .hamburger span + span{ margin-top:5px; }
   .logo{
     display:flex; align-items:center; gap:.8rem;
     color:#fff;
@@ -240,7 +246,10 @@
     display:flex; justify-content:space-between; align-items:center;
     padding:1.3rem 3.5rem; flex-wrap:wrap; gap:.8rem;
   }
-  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; }
+  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; display:block; margin-top:.2rem; }
+  .footer-brand{ display:flex; align-items:center; gap:.7rem; }
+  .footer-brand svg{ width:30px; height:30px; flex-shrink:0; }
+  .footer-brand .fb-name{ font-family:'Fraunces', serif; font-weight:700; font-size:.8rem; color:#fff; letter-spacing:.02em; line-height:1.3; }
   .legal-bar .legal-links{ display:flex; gap:1.6rem; }
   .legal-bar .legal-links a{ font-size:.74rem; color:#7d8fac; transition:color .15s ease; }
   .legal-bar .legal-links a:hover{ color:#fff; }
@@ -270,6 +279,29 @@
   .svc-hero-stats .stat i{ font-size:1.2rem; color:var(--gold); }
   .svc-hero-stats .stat .t1{ font-size:.88rem; font-weight:600; color:#fff; }
   .svc-hero-stats .stat .t2{ font-size:.76rem; color:#9fb0c9; }
+
+  .hero-intro{ max-width:44rem; margin:0 auto; text-align:center; }
+  .hero-intro p{ margin-left:auto; margin-right:auto; }
+  .hero-intro .btn-outline{ margin-top:.4rem; }
+
+  .hero-process-preview{
+    display:flex; justify-content:center; gap:1.5rem; max-width:900px; margin:3rem auto 0; position:relative;
+  }
+  .hero-process-preview::before{
+    content:""; position:absolute; top:22px; left:12%; right:12%; height:1px; background:rgba(255,255,255,.15); z-index:0;
+  }
+  .mini-step{ text-align:center; flex:1; position:relative; z-index:1; }
+  .mini-step .circle{
+    width:44px; height:44px; border-radius:50%; background:var(--navy-deep); border:1px solid rgba(214,164,78,.5);
+    display:flex; align-items:center; justify-content:center; margin:0 auto .7rem;
+    font-family:'Fraunces', serif; font-weight:700; font-size:.95rem; color:var(--gold);
+  }
+  .mini-step .label{ font-size:.82rem; color:#dbe3ee; font-weight:600; line-height:1.35; }
+
+  .scroll-cue{
+    text-align:center; margin:3rem auto 0; padding-bottom:3rem; color:#9fb0c9; font-size:.82rem; letter-spacing:.03em;
+  }
+  .scroll-cue i{ display:block; margin-top:.6rem; font-size:.95rem; color:var(--gold); }
 
   /* ---------- PROCESS ---------- */
   .process-row{
@@ -349,6 +381,7 @@
   .service-grid{
     display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem; max-width:1200px; margin:0 auto;
   }
+  .service-grid.cols-5{ grid-template-columns:repeat(5, 1fr); }
   .service-card{
     background:#fff; border:1px solid var(--line); border-radius:8px;
     padding:2.4rem 2rem;
@@ -519,7 +552,8 @@
     .final-cta .inner{ padding:4rem 2rem; }
     .final-cta h2{ font-size:2.1rem; }
     .legal-bar .inner{ flex-direction:column; text-align:center; padding:1.3rem 2rem; }
-    .service-grid{ grid-template-columns:1fr; }
+    .footer-brand{ flex-direction:column; margin:0 auto 1rem; text-align:center; }
+    .service-grid, .service-grid.cols-5{ grid-template-columns:1fr; }
     .pricing-grid{ grid-template-columns:1fr; }
     .fit-grid{ grid-template-columns:1fr; }
     .fit-vs{ display:none; }
@@ -529,6 +563,9 @@
     .svc-hero-top{ grid-template-columns:1fr; gap:2rem; }
     .svc-hero h1{ font-size:2.1rem; }
     .svc-hero-stats{ grid-template-columns:1fr; gap:1rem; }
+    .hero-process-preview{ flex-wrap:wrap; gap:1.5rem 1rem; }
+    .hero-process-preview::before{ display:none; }
+    .mini-step{ flex:0 0 40%; }
     .process-row{ grid-template-columns:1fr; gap:2.2rem; }
     .process-arrow{ display:none; }
     .why-band .inner{ padding:3.5rem 2rem; }
@@ -545,8 +582,16 @@
     .hero h1{ font-size:2rem; }
     .cta-strip .inner{ padding:3rem 1.5rem; }
     .logo .name{ font-size:.95rem; }
-    .nav-links{ flex-wrap:wrap; justify-content:flex-end; gap:.6rem; }
-    .btn-outline{ padding:.55rem 1rem; font-size:.78rem; }
+    .hamburger{ display:block; }
+    .nav-links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background:var(--navy); flex-direction:column; align-items:stretch; gap:0;
+      padding:.5rem 1.5rem 1.5rem; border-top:1px solid rgba(255,255,255,.1);
+      box-shadow:0 12px 24px rgba(0,0,0,.25); z-index:50;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ width:100%; text-align:center; margin-top:.8rem; }
+    .btn-outline{ padding:.7rem 1rem; font-size:.85rem; }
   }
 </style>
 </head>
@@ -570,7 +615,11 @@
           <span class="tag">Business Spending Optimization</span>
         </div>
       </a>
+      <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-links">
+        <a class="btn-outline" href="about.html">About</a>
         <a class="btn-outline active" href="services.html">Services</a>
         <a class="btn-outline" href="testimonials.html">Testimonials</a>
         <a class="btn-gold small" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Call</a>
@@ -581,21 +630,35 @@
   <!-- HERO -->
   <section class="svc-hero">
     <div class="inner">
-      <div class="svc-hero-top">
-        <div>
-          <span class="eyebrow">Our Services</span>
-          <h1>Every Business Is Different. Your Rewards Strategy Should Be Too.</h1>
-          <p>No generic advice. No influencer hype. Just a customized strategy based on how your business actually spends money.</p>
-          <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
+      <div class="hero-intro">
+        <span class="eyebrow">How I Work With You</span>
+        <h1>Here's Exactly What Working With Me Looks Like</h1>
+        <p>From your first call to ongoing support, this page walks through my full process, what's included at every stage, and what it costs. Keep scrolling for the details — or book a free call now if you're ready.</p>
+        <a class="btn-outline" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Free Call</a>
+      </div>
+
+      <div class="hero-process-preview">
+        <div class="mini-step">
+          <div class="circle">1</div>
+          <div class="label">Free Strategy Call</div>
         </div>
-        <div class="svc-hero-img">
-          <img src="https://images.unsplash.com/photo-1714756123393-929709970fdb?q=80&w=1200&auto=format&fit=crop" alt="Sunset view from an airplane window">
+        <div class="mini-step">
+          <div class="circle">2</div>
+          <div class="label">Rewards Audit</div>
+        </div>
+        <div class="mini-step">
+          <div class="circle">3</div>
+          <div class="label">Custom Roadmap</div>
+        </div>
+        <div class="mini-step">
+          <div class="circle">4</div>
+          <div class="label">Ongoing Support</div>
         </div>
       </div>
-      <div class="svc-hero-stats">
-        <div class="stat"><i class="fa-solid fa-shield-halved"></i><div><div class="t1">No Obligation</div><div class="t2">Just value.</div></div></div>
-        <div class="stat"><i class="fa-regular fa-clock"></i><div><div class="t1">20-Minute Call</div><div class="t2">100% Free.</div></div></div>
-        <div class="stat"><i class="fa-regular fa-lightbulb"></i><div><div class="t1">Actionable Insights</div><div class="t2">No pressure.</div></div></div>
+
+      <div class="scroll-cue">
+        See how each step works below
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
     </div>
   </section>
@@ -603,19 +666,19 @@
   <!-- PROCESS -->
   <section class="section">
     <div class="inner">
-      <span class="eyebrow" style="text-align:center; color:var(--gold-dark);">Our Process</span>
+      <span class="eyebrow" style="text-align:center; color:var(--gold-dark);">My Process</span>
       <h2 class="eyebrow-h2">A Simple Process. Powerful Results.</h2>
       <div class="process-row">
         <div class="process-step">
           <div class="circle"><i class="fa-solid fa-magnifying-glass"></i><span class="step-no">1</span></div>
-          <h3>Business Spending Review</h3>
-          <p>We analyze your monthly expenses, vendors, advertising, software, inventory, travel, and existing credit cards.</p>
+          <h3>Free Strategy Call</h3>
+          <p>During your business spending review, I'll go through your monthly expenses, vendors, advertising, software, inventory, travel, and existing credit cards.</p>
         </div>
         <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="process-step">
           <div class="circle"><i class="fa-solid fa-list-check"></i><span class="step-no">2</span></div>
           <h3>Rewards Audit</h3>
-          <p>We identify missed earning opportunities, underperforming cards, unnecessary fees, and bonus categories you're missing.</p>
+          <p>I identify missed earning opportunities, underperforming cards, unnecessary fees, and bonus categories you're missing.</p>
         </div>
         <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="process-step">
@@ -627,7 +690,7 @@
         <div class="process-step">
           <div class="circle"><i class="fa-solid fa-headset"></i><span class="step-no">4</span></div>
           <h3>Ongoing Support</h3>
-          <p>Businesses evolve. We provide ongoing recommendations and support as your spending, goals, and opportunities change.</p>
+          <p>Businesses evolve. I provide ongoing recommendations and support as your spending, goals, and opportunities change.</p>
         </div>
       </div>
     </div>
@@ -636,13 +699,25 @@
   <!-- COMPREHENSIVE SERVICES -->
   <section class="section" style="background:var(--cream); padding-top:0;">
     <div class="inner">
-      <span class="eyebrow" style="text-align:center; color:var(--gold-dark);">What We Help With</span>
+      <span class="eyebrow" style="text-align:center; color:var(--gold-dark);">What I Help With</span>
       <h2 class="eyebrow-h2">Comprehensive Services for Business Owners</h2>
-      <div class="service-grid" style="grid-template-columns:repeat(5, 1fr);">
+      <div class="service-grid cols-5">
+        <div class="service-card" style="padding:1.8rem 1.4rem;">
+          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-chart-column"></i></div>
+          <h3 style="font-size:1.05rem;">Spending Optimization</h3>
+          <p style="font-size:.85rem;">Many businesses earn 1x when they could earn 3–5x. I put every dollar to work.</p>
+          <ul style="font-size:.82rem;">
+            <li>Advertising</li>
+            <li>Shipping &amp; freight</li>
+            <li>Office supplies</li>
+            <li>Software &amp; SaaS</li>
+            <li>Fuel &amp; travel</li>
+          </ul>
+        </div>
         <div class="service-card" style="padding:1.8rem 1.4rem;">
           <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-credit-card"></i></div>
           <h3 style="font-size:1.05rem;">Credit Card Strategy</h3>
-          <p style="font-size:.85rem;">We recommend the right cards based on your business spending — not commissions.</p>
+          <p style="font-size:.85rem;">I recommend the right cards based on your business spending — not commissions.</p>
           <ul style="font-size:.82rem;">
             <li>Business card selection</li>
             <li>Personal card integration</li>
@@ -654,7 +729,7 @@
         <div class="service-card" style="padding:1.8rem 1.4rem;">
           <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-plane"></i></div>
           <h3 style="font-size:1.05rem;">Travel Rewards Planning</h3>
-          <p style="font-size:.85rem;">Turn everyday expenses into premium travel. We help you maximize:</p>
+          <p style="font-size:.85rem;">Turn everyday expenses into premium travel. I help you maximize:</p>
           <ul style="font-size:.82rem;">
             <li>Airline miles</li>
             <li>Hotel points</li>
@@ -664,21 +739,9 @@
           </ul>
         </div>
         <div class="service-card" style="padding:1.8rem 1.4rem;">
-          <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-chart-column"></i></div>
-          <h3 style="font-size:1.05rem;">Spending Optimization</h3>
-          <p style="font-size:.85rem;">Many businesses earn 1x when they could earn 3–5x. We put every dollar to work.</p>
-          <ul style="font-size:.82rem;">
-            <li>Advertising</li>
-            <li>Shipping &amp; freight</li>
-            <li>Office supplies</li>
-            <li>Software &amp; SaaS</li>
-            <li>Fuel &amp; travel</li>
-          </ul>
-        </div>
-        <div class="service-card" style="padding:1.8rem 1.4rem;">
           <div style="font-size:1.5rem; color:var(--navy); margin-bottom:1rem;"><i class="fa-solid fa-building"></i></div>
           <h3 style="font-size:1.05rem;">Premium Travel Guidance</h3>
-          <p style="font-size:.85rem;">We teach you how to redeem for maximum value and unforgettable experiences.</p>
+          <p style="font-size:.85rem;">I teach you how to redeem for maximum value and unforgettable experiences.</p>
           <ul style="font-size:.82rem;">
             <li>Business class flights</li>
             <li>Luxury &amp; boutique hotels</li>
@@ -707,13 +770,13 @@
   <!-- PRICING -->
   <section class="section">
     <div class="inner">
-      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">How We Work Together</span>
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">How I Work Together</span>
       <h2 class="eyebrow-h2">Choose the Level of Support That Fits Your Business</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="pricing-card-body">
             <div class="plan-icon navy-circle"><i class="fa-regular fa-calendar"></i></div>
-            <span class="step-label">1. Complimentary</span>
+            <span class="step-label">1. Free, One-Time</span>
             <h3>Strategy Call</h3>
             <div class="plan-divider"></div>
             <div class="desc">A 20-minute discovery call to understand your business, spending, and travel goals.</div>
@@ -731,17 +794,18 @@
           <div class="plan-ribbon">Most Popular</div>
           <div class="pricing-card-body">
             <div class="plan-icon gold-circle"><i class="fa-solid fa-book-open"></i></div>
-            <span class="step-label">2. Custom</span>
-            <h3>Rewards Strategy</h3>
+            <h3>Custom Rewards Audit &amp; Strategy</h3>
             <div class="plan-divider"></div>
-            <div class="desc">A one-time engagement where we build your personalized rewards roadmap.</div>
+            <div class="desc">A one-time engagement where I build your personalized rewards roadmap.</div>
             <ul>
-              <li>Custom card recommendations</li>
+              <li>Specific recommendations for exactly which cards to spend on and apply for</li>
               <li>Spending optimization plan</li>
               <li>Application timing strategy</li>
-              <li>Redemption strategy &amp; guidance</li>
+              <li>Redemption shortcuts to get the most value out of every point</li>
+              <li>Pointers on where to book your trips and flights</li>
               <li>Written action plan &amp; next steps</li>
               <li>30-day email support</li>
+              <li>Starting at $199+</li>
             </ul>
             <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
             <div class="plan-footnote">One strategy. Years of premium travel.</div>
@@ -761,6 +825,7 @@
               <li>Spending &amp; goal adjustments</li>
               <li>Redemption guidance</li>
               <li>Ongoing expert support</li>
+              <li>Starting at $29+/month</li>
             </ul>
             <a class="btn-navy" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Learn More</a>
             <div class="plan-footnote">Stay ahead. Earn more. Travel better.</div>
@@ -779,7 +844,7 @@
           <h3><i class="fa-solid fa-circle-check"></i> You're a Great Fit If...</h3>
           <ul>
             <li>You're a business owner or entrepreneur</li>
-            <li>You spend $3,000+ per month in your business</li>
+            <li>You spend $2,000+ per month in your business</li>
             <li>You want to travel more (and better)</li>
             <li>You're tired of leaving rewards on the table</li>
             <li>You want a clear, simple strategy that works</li>
@@ -787,7 +852,7 @@
         </div>
         <div class="fit-vs">VS</div>
         <div class="fit-card no">
-          <h3><i class="fa-solid fa-circle-xmark"></i> We May Not Be the Right Fit If...</h3>
+          <h3><i class="fa-solid fa-circle-xmark"></i> I May Not Be the Right Fit If...</h3>
           <ul>
             <li>You're not open to using credit cards strategically</li>
             <li>You're looking for do-it-yourself tips and tricks</li>
@@ -803,7 +868,7 @@
   <!-- WHY CLIENTS WORK WITH US -->
   <section class="why-band">
     <div class="inner">
-      <span class="eyebrow" style="text-align:center; display:block;">Why Clients Work With Us</span>
+      <span class="eyebrow" style="text-align:center; display:block;">Why Clients Work With Me</span>
       <h2 class="eyebrow-h2" style="color:#fff;">More Than Points. A Better Way to Travel.</h2>
       <div class="why-grid">
         <div class="why-item">
@@ -814,12 +879,12 @@
         <div class="why-item">
           <div class="ico"><i class="fa-solid fa-dollar-sign"></i></div>
           <h3>No Extra Spending</h3>
-          <p>We help you earn more rewards with the money you're already spending.</p>
+          <p>I help you earn more rewards with the money you're already spending.</p>
         </div>
         <div class="why-item">
           <div class="ico"><i class="fa-solid fa-briefcase"></i></div>
           <h3>Business Focused</h3>
-          <p>Our strategies are built specifically for entrepreneurs and business owners.</p>
+          <p>My strategies are built specifically for entrepreneurs and business owners.</p>
         </div>
         <div class="why-item">
           <div class="ico"><i class="fa-solid fa-globe"></i></div>
@@ -838,19 +903,19 @@
       <div class="faq-grid">
         <details class="faq-acc">
           <summary>How long does a strategy call take?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
-          <p>About 20 minutes. We'll ask a few questions about your spending and travel goals, then walk you through where the opportunity is.</p>
+          <p>About 20 minutes. I'll ask a few questions about your spending and travel goals, then walk you through where the opportunity is.</p>
         </details>
         <details class="faq-acc">
           <summary>Can I use my existing credit cards?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
-          <p>In most cases, yes. We'll build your strategy around the cards you already have, then recommend additions only where they clearly add value.</p>
+          <p>In most cases, yes. I'll build your strategy around the cards you already have, then recommend additions only where they clearly add value.</p>
         </details>
         <details class="faq-acc">
           <summary>Do I need a business to work with you?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
-          <p>Yes — our strategies are built around business spending, typically $2,000–$5,000+ per month across cards.</p>
+          <p>Yes — my strategies are built around business spending, typically $2,000–$5,000+ per month across cards.</p>
         </details>
         <details class="faq-acc">
           <summary>Do you book travel for me?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
-          <p>We guide you through booking the best redemptions yourself, and offer hands-on support for more complex bookings.</p>
+          <p>I guide you through booking the best redemptions yourself, and offer hands-on support for more complex bookings.</p>
         </details>
         <details class="faq-acc">
           <summary>Will I have to spend more money?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
@@ -858,7 +923,7 @@
         </details>
         <details class="faq-acc">
           <summary>Will this hurt my credit score?<span class="icon"><i class="fa-solid fa-plus"></i></span></summary>
-          <p>We factor your credit profile into every recommendation and talk through any impact honestly before you apply for anything.</p>
+          <p>I factor your credit profile into every recommendation and talk through any impact honestly before you apply for anything.</p>
         </details>
       </div>
     </div>
@@ -881,7 +946,22 @@
 
   <div class="legal-bar">
     <div class="inner">
-      <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Margins and Miles logo">
+          <rect x="0" y="0" width="100" height="100" rx="22" fill="#0c1b2e"/>
+          <rect x="16" y="61" width="11" height="17" rx="1.5" fill="#d6a44e" opacity="0.45"/>
+          <rect x="34" y="49" width="11" height="29" rx="1.5" fill="#d6a44e" opacity="0.7"/>
+          <rect x="52" y="34" width="11" height="44" rx="1.5" fill="#d6a44e"/>
+          <path d="M63 33 L73 21" stroke="#d6a44e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+          <g transform="translate(62,2) rotate(20) scale(1.3)">
+            <path d="M2 21 L23 12 L2 3 L2 10 L17 12 L2 14 Z" fill="#d6a44e"/>
+          </g>
+        </svg>
+        <div>
+          <span class="fb-name">MARGINS AND MILES</span>
+          <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+        </div>
+      </div>
       <div class="legal-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
