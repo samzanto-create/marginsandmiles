@@ -74,11 +74,17 @@
   /* ---------- HEADER ---------- */
   header{
     background:var(--navy);
+    position:relative;
   }
   header .inner{
     padding:1.5rem 3.5rem;
     display:flex; align-items:center; justify-content:space-between;
   }
+  .hamburger{
+    display:none; background:none; border:none; cursor:pointer; padding:.5rem; margin:-.5rem;
+  }
+  .hamburger span{ display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
+  .hamburger span + span{ margin-top:5px; }
   .logo{
     display:flex; align-items:center; gap:.8rem;
     color:#fff;
@@ -163,6 +169,24 @@
   .step h3{ font-size:1.25rem; margin-bottom:.6rem; font-weight:600; }
   .section-dark .step h3{ color:#fff; }
   .step p{ font-size:.98rem; color:var(--muted); line-height:1.6; max-width:19rem; margin:0 auto; }
+
+  /* ---------- WHO THIS IS FOR ---------- */
+  .who-intro{ text-align:center; max-width:46rem; margin:0 auto 3.5rem; color:var(--muted); font-size:1.08rem; line-height:1.75; }
+  .who-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem; max-width:1100px; margin:0 auto 3rem;
+  }
+  .who-item{ text-align:center; }
+  .who-item .ico{
+    width:60px; height:60px; border-radius:50%; background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:1.3rem;
+  }
+  .who-item h3{ font-size:1.05rem; margin-bottom:.5rem; font-weight:600; }
+  .who-item p{ font-size:.88rem; color:var(--muted); line-height:1.55; max-width:16rem; margin:0 auto; }
+  .who-qualifier{
+    max-width:640px; margin:0 auto; text-align:center; background:#fff; border:1px solid var(--line);
+    border-radius:10px; padding:1.6rem 2rem; font-size:1rem; color:var(--ink); line-height:1.6;
+  }
+  .who-qualifier b{ color:var(--navy); }
   .section-dark .step p{ color:#c3cede; }
 
   /* ---------- CTA STRIP ---------- */
@@ -245,7 +269,10 @@
     display:flex; justify-content:space-between; align-items:center;
     padding:1.3rem 3.5rem; flex-wrap:wrap; gap:.8rem;
   }
-  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; }
+  .legal-bar .copyright{ font-size:.74rem; color:#7d8fac; display:block; margin-top:.2rem; }
+  .footer-brand{ display:flex; align-items:center; gap:.7rem; }
+  .footer-brand svg{ width:30px; height:30px; flex-shrink:0; }
+  .footer-brand .fb-name{ font-family:'Fraunces', serif; font-weight:700; font-size:.8rem; color:#fff; letter-spacing:.02em; line-height:1.3; }
   .legal-bar .legal-links{ display:flex; gap:1.6rem; }
   .legal-bar .legal-links a{ font-size:.74rem; color:#7d8fac; transition:color .15s ease; }
   .legal-bar .legal-links a:hover{ color:#fff; }
@@ -344,9 +371,11 @@
     .split-img{ height:320px; }
     .testi-grid{ grid-template-columns:repeat(2, 1fr); }
     .earn-row{ grid-template-columns:repeat(2, 1fr); row-gap:2.2rem; }
+    .who-grid{ grid-template-columns:repeat(2, 1fr); }
     .final-cta .inner{ padding:4rem 2rem; }
     .final-cta h2{ font-size:2.1rem; }
     .legal-bar .inner{ flex-direction:column; text-align:center; padding:1.3rem 2rem; }
+    .footer-brand{ flex-direction:column; margin:0 auto 1rem; text-align:center; }
     .service-grid{ grid-template-columns:1fr; }
     .pricing-grid{ grid-template-columns:1fr; }
     .page-hero .inner{ padding:3.5rem 2rem; }
@@ -356,12 +385,21 @@
   /* ---------- MOBILE ---------- */
   @media (max-width:560px){
     .steps{ grid-template-columns:1fr; gap:2.2rem; }
+    .who-grid{ grid-template-columns:1fr; }
     .testi-grid{ grid-template-columns:1fr; }
     .hero h1{ font-size:2rem; }
     .cta-strip .inner{ padding:3rem 1.5rem; }
     .logo .name{ font-size:.95rem; }
-    .nav-links{ flex-wrap:wrap; justify-content:flex-end; gap:.6rem; }
-    .btn-outline{ padding:.55rem 1rem; font-size:.78rem; }
+    .hamburger{ display:block; }
+    .nav-links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background:var(--navy); flex-direction:column; align-items:stretch; gap:0;
+      padding:.5rem 1.5rem 1.5rem; border-top:1px solid rgba(255,255,255,.1);
+      box-shadow:0 12px 24px rgba(0,0,0,.25); z-index:50;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links a{ width:100%; text-align:center; margin-top:.8rem; }
+    .btn-outline{ padding:.7rem 1rem; font-size:.85rem; }
   }
 </style>
 </head>
@@ -386,7 +424,11 @@
           <span class="tag">Business Spending Optimization</span>
         </div>
       </a>
+      <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-links">
+        <a class="btn-outline" href="about.html">About</a>
         <a class="btn-outline" href="services.html">Services</a>
         <a class="btn-outline" href="testimonials.html">Testimonials</a>
         <a class="btn-gold small" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book a Call</a>
@@ -399,7 +441,7 @@
     <div class="inner">
       <div>
         <h1>Your Business Spends.<br>You Should Travel.</h1>
-        <p>We help business owners turn everyday expenses into premium travel and unforgettable experiences.</p>
+        <p>I help business owners turn everyday expenses into premium travel and unforgettable experiences.</p>
         <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
       </div>
       <div class="hero-visual">
@@ -412,6 +454,52 @@
     </div>
   </section>
 
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="inner">
+      <span class="eyebrow" style="text-align:center; display:block; color:var(--gold-dark);">Who This Is For</span>
+      <h2 class="eyebrow-h2">Built for Business Owners With Spend to Put to Work</h2>
+      <p class="who-intro">Margins and Miles works best for business owners who already have consistent, meaningful spend running through their company — the kind that adds up to real travel if it's structured the right way. You don't need to run a large company or have a finance department. You need a clear picture of where your money already goes, and a strategy that turns it into something more than a line on a statement.</p>
+
+      <div class="who-grid">
+        <div class="who-item">
+          <div class="ico"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3>E-Commerce &amp; Retail</h3>
+          <p>Inventory, ad spend, and shipping costs that already run through a business card every month.</p>
+        </div>
+        <div class="who-item">
+          <div class="ico"><i class="fa-solid fa-broom"></i></div>
+          <h3>Home &amp; Field Services</h3>
+          <p>Lawn care, cleaning, contracting, and similar businesses with steady operating and supply costs.</p>
+        </div>
+        <div class="who-item">
+          <div class="ico"><i class="fa-solid fa-industry"></i></div>
+          <h3>Manufacturing &amp; Wholesale</h3>
+          <p>Materials, equipment, and production costs — often the highest-spend, highest-opportunity category.</p>
+        </div>
+        <div class="who-item">
+          <div class="ico"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Agencies &amp; Consultants</h3>
+          <p>Software subscriptions, contractor payments, and client-related expenses that add up fast.</p>
+        </div>
+        <div class="who-item">
+          <div class="ico"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3>Professional Services</h3>
+          <p>Law, accounting, real estate, and similar firms with predictable monthly operating costs.</p>
+        </div>
+        <div class="who-item">
+          <div class="ico"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Restaurants &amp; Hospitality</h3>
+          <p>Food costs, supplies, and vendor payments that make up a large, recurring monthly spend.</p>
+        </div>
+      </div>
+
+      <div class="who-qualifier">
+        If your business consistently spends <b>$2,000 or more per month</b> across operations, inventory, advertising, or software, you likely qualify. If you're not sure, a free strategy call will tell you exactly where you stand.
+      </div>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="section section-dark">
     <div class="inner">
@@ -419,13 +507,13 @@
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
-          <h3>We Analyze</h3>
-          <p>We review your cards, spending, and travel goals to find opportunities.</p>
+          <h3>I Analyze</h3>
+          <p>I review your cards, spending, and travel goals to find opportunities.</p>
         </div>
         <div class="step">
           <div class="num">2</div>
-          <h3>We Strategize</h3>
-          <p>We build a custom plan to maximize points, perks, and value.</p>
+          <h3>I Strategize</h3>
+          <p>I build a custom plan to maximize points, perks, and value.</p>
         </div>
         <div class="step">
           <div class="num">3</div>
@@ -469,7 +557,7 @@
       <img class="split-img" src="https://images.unsplash.com/photo-1540339832862-474599807836?q=80&w=1200&auto=format&fit=crop" alt="Business class airplane cabin">
       <div class="split-copy">
         <h2>Stop Leaving Rewards on the Table</h2>
-        <p>Most businesses are leaving thousands of dollars in travel rewards on the table every year. Let us build a strategy that changes that.</p>
+        <p>Most businesses are leaving thousands of dollars in travel rewards on the table every year. Let me build a strategy that changes that.</p>
         <a class="btn-gold" href="https://calendly.com/marginsandmiles-info/20min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
       </div>
     </div>
@@ -498,7 +586,22 @@
 
   <div class="legal-bar">
     <div class="inner">
-      <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+      <div class="footer-brand">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Margins and Miles logo">
+          <rect x="0" y="0" width="100" height="100" rx="22" fill="#0c1b2e"/>
+          <rect x="16" y="61" width="11" height="17" rx="1.5" fill="#d6a44e" opacity="0.45"/>
+          <rect x="34" y="49" width="11" height="29" rx="1.5" fill="#d6a44e" opacity="0.7"/>
+          <rect x="52" y="34" width="11" height="44" rx="1.5" fill="#d6a44e"/>
+          <path d="M63 33 L73 21" stroke="#d6a44e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+          <g transform="translate(62,2) rotate(20) scale(1.3)">
+            <path d="M2 21 L23 12 L2 3 L2 10 L17 12 L2 14 Z" fill="#d6a44e"/>
+          </g>
+        </svg>
+        <div>
+          <span class="fb-name">MARGINS AND MILES</span>
+          <span class="copyright">&copy; 2026 Margins and Miles. All rights reserved.</span>
+        </div>
+      </div>
       <div class="legal-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
